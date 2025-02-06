@@ -6,7 +6,7 @@ document.getElementById('fetch-btn').addEventListener('click', async () => {
     }
 
     try {
-        const response = await fetch(`https://api.mojang.com/users/profiles/minecraft/${username}`);
+        const response = await fetch(`https://api.ashcon.app/mojang/v2/user/${username}`);
         const data = await response.json();
 
         if (data && data.id) {
