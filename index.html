@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hypixel Skyblock Profile Viewer</title>
+    <title>Hypixel UUID Viewer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hypixel Skyblock Profile Viewer</h1>
-    <input type="text" id="usernameInput" placeholder="Enter Minecraft Username">
-    <button onclick="getProfileData()">Get Profile</button>
-    <div id="result">
-        <p id="uuid"></p>
-        <img id="skin" alt="Minecraft Skin">
-        <pre id="profileData"></pre>
+    <div class="container">
+        <h1>Hypixel UUID Viewer</h1>
+        <input type="text" id="username" placeholder="Enter Minecraft Username">
+        <button id="fetch-btn">Fetch UUID</button>
+        <div id="uuid-data"></div>
     </div>
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
