@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+#usernameInput {
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+#uuid {
+    font-weight: bold;
+}
+
+#skin {
+    margin-top: 10px;
+    width: 64px;
+    height: 128px;
+}
+
+#profileData {
+    text-align: left;
+    margin-top: 10px;
+    white-space: pre-wrap;
+}
