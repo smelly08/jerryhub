@@ -8,6 +8,7 @@ async function getProfileData() {
     try {
         // Fetch UUID from Mojang API
         const uuidResponse = await fetch(`https://api.mojang.com/users/profiles/minecraft/${username}`);
+        alert(uuidResponse);
         if (!uuidResponse.ok) {
             throw new Error('Username not found');
         }
