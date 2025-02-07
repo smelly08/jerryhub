@@ -25,24 +25,16 @@
     try {
         const response = await fetch(`https://api.ashcon.app/mojang/v2/user/${username}`);
         const data = await response.json();
-
-        /*if (data && data.id) {
+        
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const urlData = urlParams.get('urlData')
+        
+        if (data && data.uuid) {
             document.getElementById('uuid-data').innerHTML = `
-                <h2>${username}'s UUID</h2>
-                <p>UUID: ${data.id}</p>
-            `;
-            */
-        if (data) {
-            const headImageUrl = `https://minecraft-heads.com/head/${uuid}`;
-            document.getElementById('playerHead').src = headImageUrl;
-            document.getElementById('playerHead').style.display = 'block';
-            document.getElementById('uuid-data').innerHTML = `
-                <button onclick="loadSkin(${data.uuid})">Load Skin</button>
-                <img id="playerHead" src="" alt="Player Head" style="display:none;">
                 <h2>UUID: ${data.uuid}</h2>
                 <h2>IGN: ${data.username}</h2>
-                <h2>Skin: ${data.textures.skin.url}</h2>
-                <h2>${JSON.stringify(data)}</h2>
+                <h3>from url: ${urlData}</h3>
             `;
         } else {
             document.getElementById('uuid-data').innerHTML = "User not found.";
@@ -51,11 +43,6 @@
         document.getElementById('uuid-data').innerHTML = "An error occurred.";
     }
 });
-    function loadSkin(uuid) {
-        const headImageUrl = `https://minecraft-heads.com/head/${uuid}`;
-        document.getElementById('playerHead').src = headImageUrl;
-        document.getElementById('playerHead').style.display = 'block';
-    }
     </script>
 </body>
 </html>
