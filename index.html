@@ -34,10 +34,10 @@
             */
         if (data) {
             const headImageUrl = `https://minecraft-heads.com/head/${uuid}`;
-                document.getElementById('playerHead').src = headImageUrl;
-                document.getElementById('playerHead').style.display = 'block';
-                document.getElementById('uuid-data').innerHTML = `
-                <button onclick="loadSkin(data.uuid)">Load Skin</button>
+            document.getElementById('playerHead').src = headImageUrl;
+            document.getElementById('playerHead').style.display = 'block';
+            document.getElementById('uuid-data').innerHTML = `
+                <button onclick="loadSkin(${data.uuid})">Load Skin</button>
                 <img id="playerHead" src="" alt="Player Head" style="display:none;">
                 <h2>UUID: ${data.uuid}</h2>
                 <h2>IGN: ${data.username}</h2>
@@ -51,10 +51,10 @@
         document.getElementById('uuid-data').innerHTML = "An error occurred.";
     }
 });
-    function loadSkin() {
+    function loadSkin(uuid) {
         const headImageUrl = `https://minecraft-heads.com/head/${uuid}`;
-                document.getElementById('playerHead').src = headImageUrl;
-                document.getElementById('playerHead').style.display = 'block';
+        document.getElementById('playerHead').src = headImageUrl;
+        document.getElementById('playerHead').style.display = 'block';
     }
     </script>
 </body>
