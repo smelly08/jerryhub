@@ -8,28 +8,12 @@
         {
             "src": "index.html",
             "use": "@vercel/static"
-        },
-        {
-            "src": "profile/index.html",
-            "use": "@vercel/static"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
             "dest": "/",
-            "methods": [
-                "GET",
-                "POST",
-                "PUT",
-                "PATCH",
-                "DELETE",
-                "OPTIONS"
-            ]
-        },
-        {
-            "src": "/profile/",
-            "dest": "/profile/",
             "methods": [
                 "GET",
                 "POST",
