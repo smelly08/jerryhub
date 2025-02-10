@@ -1,1 +1,29 @@
+body {
+    font-family: "main";
+    padding: 20px;
+}
+
+@font-face {
+    font-family: "main";
+    src: url("./font/MinecraftRegular-Bmg3.otf");
+}
+#usernameInput {
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+#uuid {
+    font-weight: bold;
+}
+
+#skin {
+    margin-top: 10px;
+    width: 64px;
+    height: 128px;
+}
 
