@@ -1,2 +1,2 @@
-# smellyutils
+# JerryHub!
 Utilities for Hypixel Skyblock
