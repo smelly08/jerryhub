@@ -48,5 +48,7 @@ body {
 .container {
     position: fixed;
     padding: 20px;
+    width: 100vw;
+    height: 100vh;
     backdrop-filter: blur(10px);
 }
