@@ -51,7 +51,7 @@ button {
     background: #757575;
     padding: 10px;
     box-shadow: 
-        -4px -4px 0px 4px rgba(198,198,198,1),
-        0px 0px 0px 8px rgba(198,198,198,1),
-        0px 0px 0px 16px rgba(0,0,0,0);
+        0px 0px 0px 16px rgba(0,0,0,1),
+        0px 0px 0px 8px rgba(198,198,197,1),
+        -4px -4px 0px 4px rgba(117,117,117,1);
 }
