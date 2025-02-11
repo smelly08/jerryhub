@@ -1,5 +1,6 @@
 body {
     font-family: "main";
+    color: white;
     padding: 20px;
 }
 
@@ -27,3 +28,8 @@ body {
     height: 128px;
 }
 
+# background {
+    filter: blur(10px);
+    min-width: 100%;
+    min-height: 100%;
+}
