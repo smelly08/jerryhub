@@ -1,43 +1,26 @@
 document.getElementById('fetch-btn').addEventListener('click', async () => {
     const username = document.getElementById('username').value;
+
+    // Check if the username is empty
     if (!username) {
-        document.getElementById('uuid-data').innerHTML = "Please enter a username.";
+        document.getElementById('stats').innerText = "Please enter a username.";
         return;
     }
 
     try {
-        const sbresponse = await fetch(`https://sky.shiiyu.moe/api/v2/profile/${username}`);
+        // Fetch stats from the API
+        const response = await fetch(`https://sky.shiiyu.moe/api/v2/profile/${username}`);
         
         // Check if the response is okay
-        if (!sbresponse.ok) {
-            document.getElementById('uuid-data').innerHTML = "Skyblock player not found.";
-            return;
+        if (!response.ok) {
+            throw new Error("User not found or an error occurred.");
         }
-        
-        const sbstats = await sbresponse.json();
-        
-        if (Array.isArray(sbstats.profiles) && sbstats.profiles.length > 0) {
-            document.getElementById('stats').innerHTML = `
-                <select id="sel"></select>
-                <div id="profileData"></div>
-                <p>${JSON.stringify(sbstats)}</p>
-            `;
 
-            const dropdown = document.getElementById('sel');
-            for (const profile of sbstats.profiles) {
-                const option = document.createElement("option");
-                option.value = profile.profile_id; // Set the value to the profile ID
-                option.textContent = profile.cute_name; // Set the displayed text to the cute name
-                dropdown.appendChild(option);
-            }
-        } else {
-            document.getElementById('stats').innerHTML = `
-            <p>No profiles found for the Skyblock player.
-            <br>${JSON.stringify(sbstats)}</p>
-            `;
-        }
+        const data = await response.json();
+        
+        // Display the fetched JSON in the stats div
+        document.getElementById('stats').innerText = JSON.stringify(data, null, 2); // Pretty print JSON
     } catch (error) {
-        console.error(error); // Log the error for debugging
-        document.getElementById('stats').innerHTML = `An error occurred loading Skyblock stats. (${error})`;
+        document.getElementById('stats').innerText = error.message;
     }
 });
