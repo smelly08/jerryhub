@@ -1,3 +1,12 @@
+addEventListener("load", (event) => {
+    document.getElementById("container").innerHTML = `
+        <h1>Test 1</h1>
+        <input type="text" id="username" placeholder="Enter Minecraft Username">
+        <button id="fetch-btn">Get stats</button>
+        <div id="stats"></div>
+    `;
+});
+
 document.getElementById('fetch-btn').addEventListener('click', async () => {
     const username = document.getElementById('username').value;
 
