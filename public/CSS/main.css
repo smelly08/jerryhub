@@ -50,8 +50,9 @@ button {
     cursor: pointer;
     background: #757575;
     padding: 10px;
-    box-shadow: 
-        0px 0px 0px 16px rgba(0,0,0,1),
-        0px 0px 0px 8px rgba(198,198,197,1),
-        -4px -4px 0px 4px rgba(117,117,117,1);
+    box-shadow: 0px 0px 0px 18px rgba(0,0,0,1);
+    border-right: 4px #757575;
+    border-bottom: 4px #757575;
+    border-top: 4px #c6c6c6;
+    border-left: 4px #c6c6c6;
 }
