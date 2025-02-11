@@ -15,7 +15,8 @@ document.getElementById('fetch-btn').addEventListener('click', async () => {
         document.getElementById('stats').innerText = "Please enter a username.";
         return;
     }
-
+    
+    document.getElementById('stats').innerText = "Fetching...";
     try {
         // Fetch stats from the API
         const response = await fetch(`https://sky.shiiyu.moe/api/v2/profile/${username}`);
@@ -30,6 +31,7 @@ document.getElementById('fetch-btn').addEventListener('click', async () => {
         // Display the fetched JSON in the stats div
         document.getElementById('stats').innerText = JSON.stringify(data, null, 2); // Pretty print JSON
     } catch (error) {
+        document.getElementById('stats').innerText = "Trying CORS alternative...";
         try {
             // Fetch stats from the API
             const response = await fetch(`https://api.codetabs.com/v1/tmp/?quest=https://sky.shiiyu.moe/api/v2/profile/${username}`);
