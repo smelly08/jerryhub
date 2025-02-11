@@ -35,14 +35,16 @@ body {
     display: grid;
     height: 100%;
     filter: blur(10px);
+    z-index: -9999;
 }
 #background {
     max-width: 100%;
     max-height: 100vh;
-    margin: auto;
+    margin: -5%;
     background-image: url("/public/img/hub2.png");
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: -9998;
 }
 
 .container {
