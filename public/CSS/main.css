@@ -1,7 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: "main";
     color: white;
-    padding: 20px;
 }
 
 @font-face {
@@ -28,9 +31,17 @@ body {
     height: 128px;
 }
 
-# background {
+.imgbox {
+    display: grid;
+    height: 100%;
+}
+#background {
+    max-width: 100%;
+    max-height: 100vh;
+    margin: auto;
+}
+
+.container {
     position: fixed;
-    filter: blur(10px);
-    min-width: 100%;
-    min-height: 100%;
+    padding: 20px;
 }
