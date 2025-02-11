@@ -5,6 +5,7 @@
 body {
     font-family: "main";
     color: white;
+    background-image: url("./img/hub2.png");
 }
 
 @font-face {
