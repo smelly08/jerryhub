@@ -6,6 +6,9 @@ body {
     font-family: "main";
     color: white;
     background-image: url("/public/img/hub2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(10px);
 }
 
 @font-face {
