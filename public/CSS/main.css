@@ -47,6 +47,7 @@ body {
 button {
     font-family: "main";
     color: white;
+    cursor: pointer;
     background: #757575;
     padding: 20px;
     box-shadow:
@@ -80,9 +81,4 @@ button {
     -2px 2px #C6C6C6,
     -4px 2px black,
     -2px 4px black;
-}
-#fetch-btn {
-    font-family: "main";
-    color: white;
-    background: #050555;
 }
