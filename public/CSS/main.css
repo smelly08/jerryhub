@@ -36,8 +36,17 @@ body {
     width: 300px;
     padding: 10px;
     margin: 10px;
+    font-family: "main";
+    color: white;
+    background: #050555;
 }
 
 #result {
     margin-top: 20px;
+}
+
+#fetch-btn {
+    font-family: "main";
+    color: white;
+    background: #050555;
 }
