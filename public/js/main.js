@@ -9,7 +9,7 @@ document.getElementById('fetch-btn').addEventListener('click', async () => {
 
     try {
         // Fetch stats from the API
-        const response = await fetch(`https://sky.shiiyu.moe/api/v2/profile/${username}`);
+        const response = await fetch(`https://api.codetabs.com/v1/tmp/?quest=https://sky.shiiyu.moe/api/v2/profile/${username}`);
         
         // Check if the response is okay
         if (!response.ok) {
