@@ -1,5 +1,5 @@
 addEventListener("load", (event) => {
-    document.getElementById("container").innerHTML = `
+    document.getElementById("main").innerHTML = `
         <h1>Profile</h1>
         <input type="text" id="username" placeholder="Enter Minecraft Username">
         <button id="fetch-btn">Get stats</button>
