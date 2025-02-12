@@ -50,7 +50,7 @@ async function loadStats() {
     // Add change event listener to the dropdown
     dropdown.addEventListener('change', (event) => {
         const selectedProfileId = event.target.value;
-        const selectedProfile = profilesData.find(profile => profile.profile_id === selectedProfileId);
+        const selectedProfile = Object.values(profilesData).find(profile => profile.profile_id === selectedProfileId);
 
         // Clear previous stats
         document.getElementById('stats').innerHTML = '';
