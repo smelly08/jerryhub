@@ -2,13 +2,12 @@ addEventListener("load", (event) => {
     document.getElementById("main").innerHTML = `
         <h1>Profile</h1>
         <input type="text" id="username" placeholder="Enter Minecraft Username">
-        <button id="fetch-btn">Get stats</button>
+        <button id="fetch-btn" onclick="fetchStats()">Get stats</button>
         <div id="stats"></div>
     `;
 });
-let btnEl = document.getElementById("fetch-btn");
-btnEl?.addEventListener("click", async () => {
-    console.log("pressed");
+async function fetchStats() {
+    console.log("fetching");
     const username = document.getElementById('username').value;
 
     // Check if the username is empty
@@ -50,4 +49,4 @@ btnEl?.addEventListener("click", async () => {
             document.getElementById('stats').innerText = error.message;
         }
     }
-});
+};
