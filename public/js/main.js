@@ -1,6 +1,5 @@
 let playerdata = {};
 let profilesData = {};
-var stats = document.getElementById('stats');
 
 // Create page
 addEventListener("load", (event) => {
@@ -14,18 +13,18 @@ addEventListener("load", (event) => {
 
 // Load Stats for player
 async function loadStats() {
-    stats.innerHTML = "Loading...";
+    document.getElementById('stats').innerHTML = "Loading...";
     
     const username = document.getElementById('username').value;
     
     // Check if the username is empty
     if (!username) {
-        stats.innerHTML = "Please enter a username.";
+        document.getElementById('stats').innerHTML = "Please enter a username.";
         return;
     }
     
     playerdata = await fetchStats(username);
-    stats.innerHTML = `
+    document.getElementById('stats').innerHTML = `
         <h1>${username}</h1>
         <select id="sel"></select>
         <p>${JSON.stringify(playerdata, null, 2)}</p>
@@ -54,11 +53,11 @@ async function loadStats() {
         const selectedProfile = profilesData.find(profile => profile.profile_id === selectedProfileId);
 
         // Clear previous stats
-        stats.innerHTML = '';
+        document.getElementById('stats').innerHTML = '';
 
         if (selectedProfile) {
             // Display the selected profile's information
-            stats.innerHTML = `
+            document.getElementById('stats').innerHTML = `
                 <h2>${selectedProfile.cute_name}</h2>
                 <p><strong>Profile ID:</strong> ${selectedProfile.profile_id}</p>
                 <p><strong>Last Save:</strong> ${new Date(selectedProfile.last_save).toLocaleString()}</p>
