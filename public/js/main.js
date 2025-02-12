@@ -6,8 +6,8 @@ addEventListener("load", (event) => {
         <div id="stats"></div>
     `;
 });
-
-document.getElementById('fetch-btn').addEventListener('click', async () => {
+let btnEl = document.getElementById("fetch-btn");
+btnEl?.addEventListener("click", async () => {
     const username = document.getElementById('username').value;
 
     // Check if the username is empty
