@@ -18,7 +18,7 @@ async function loadStats() {
         return;
     }
     
-    playerdata = fetchStats(username);
+    playerdata = await fetchStats(username);
     document.getElementById('stats').innerHTML = `
         <h1>${username}</h1>
         <p>${JSON.stringify(playerdata, null, 2)}</p>
