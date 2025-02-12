@@ -7,7 +7,7 @@ addEventListener("load", (event) => {
         <h1>Profile</h1>
         <input type="text" id="username" placeholder="Enter Minecraft Username">
         <button id="fetch-btn" onclick="loadStats()">Get stats</button>
-        <select id="sel">Profile</select>
+        <select id="sel"><option value="">Select a profile</option></select>
         <div id="stats"></div>
     `;
 });
