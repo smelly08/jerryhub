@@ -1,6 +1,6 @@
 let playerdata = {};
 let profilesData = {};
-const stats = document.getElementById('stats');
+var stats = document.getElementById('stats');
 
 // Create page
 addEventListener("load", (event) => {
