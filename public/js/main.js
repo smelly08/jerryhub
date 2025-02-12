@@ -21,9 +21,27 @@ async function loadStats() {
     playerdata = await fetchStats(username);
     document.getElementById('stats').innerHTML = `
         <h1>${username}</h1>
+        <select id="sel"></select>
         <p>${JSON.stringify(playerdata, null, 2)}</p>
     `;
+
+    // Populate the dropdown with cute names
+    const dropdown = document.getElementById('sel');
+
+    // Clear existing options except for the default one
+    dropdown.innerHTML = '<option value="">Select a profile</option>';
+
+    // Iterate through each profile in playerdata
+    for (const profileId in playerdata.profiles) {
+        const profile = playerdata.profiles[profileId];
+        const option = document.createElement("option");
+        option.value = profile.profile_id; // Set the value to the profile ID
+        option.textContent = profile.cute_name; // Set the displayed text to the cute name
+        dropdown.appendChild(option);
+    }
 }
+
+// Fetch player stats from SkyCrypt API
 async function fetchStats(un) {
     console.log("fetching");
 
