@@ -47,7 +47,6 @@ body {
 button {
     font-family: "main";
     color: white;
-    cursor: pointer;
     background: #757575;
     padding: 10px;
     margin: auto;
@@ -56,4 +55,7 @@ button {
     border-right: 2px solid #757575;
     border-bottom: 2px solid #757575;
     border-left: 2px solid #c6c6c6;
+}
+button:hover {
+    box-shadow: 0px 0px 0px 2px rgba(255,255,255,1);
 }
