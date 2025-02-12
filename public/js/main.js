@@ -1,4 +1,8 @@
-var playerdata = 0;
+let playerdata = {};
+let profilesData = {};
+const stats = document.getElementById('stats');
+
+// Create page
 addEventListener("load", (event) => {
     document.getElementById("main").innerHTML = `
         <h1>Profile</h1>
@@ -7,19 +11,21 @@ addEventListener("load", (event) => {
         <div id="stats"></div>
     `;
 });
+
+// Load Stats for player
 async function loadStats() {
-    document.getElementById('stats').innerHTML = "Loading...";
+    stats.innerHTML = "Loading...";
     
     const username = document.getElementById('username').value;
     
     // Check if the username is empty
     if (!username) {
-        document.getElementById('stats').innerHTML = "Please enter a username.";
+        stats.innerHTML = "Please enter a username.";
         return;
     }
     
     playerdata = await fetchStats(username);
-    document.getElementById('stats').innerHTML = `
+    stats.innerHTML = `
         <h1>${username}</h1>
         <select id="sel"></select>
         <p>${JSON.stringify(playerdata, null, 2)}</p>
@@ -32,12 +38,34 @@ async function loadStats() {
     dropdown.innerHTML = '<option value="">Select a profile</option>';
 
     // Iterate through each profile in playerdata
-    for (const profileId in playerdata.profiles) {
-        const profile = playerdata.profiles[profileId];
+    profilesData = playerdata.profiles;
+    
+    for (const profileId in profilesData) {
+        const profile = profilesData[profileId];
         const option = document.createElement("option");
         option.value = profile.profile_id; // Set the value to the profile ID
         option.textContent = profile.cute_name; // Set the displayed text to the cute name
         dropdown.appendChild(option);
+    }
+
+    // Add change event listener to the dropdown
+    dropdown.addEventListener('change', (event) => {
+        const selectedProfileId = event.target.value;
+        const selectedProfile = profilesData.find(profile => profile.profile_id === selectedProfileId);
+
+        // Clear previous stats
+        stats.innerHTML = '';
+
+        if (selectedProfile) {
+            // Display the selected profile's information
+            stats.innerHTML = `
+                <h2>${selectedProfile.cute_name}</h2>
+                <p><strong>Profile ID:</strong> ${selectedProfile.profile_id}</p>
+                <p><strong>Last Save:</strong> ${new Date(selectedProfile.last_save).toLocaleString()}</p>
+                <p><strong>Current:</strong> ${selectedProfile.current ? 'Yes' : 'No'}</p>
+                <p><strong>Data:</strong> ${JSON.stringify(selectedProfile.data, null, 2)}</p>
+            `;
+        }
     }
 }
 
