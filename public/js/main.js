@@ -66,7 +66,7 @@ async function loadStats() {
                 <p><strong>Data:</strong> ${JSON.stringify(selectedProfile.data, null, 2)}</p>
             `;
         }
-    }
+    });
 }
 
 // Fetch player stats from SkyCrypt API
