@@ -7,6 +7,7 @@ addEventListener("load", (event) => {
         <h1>Profile</h1>
         <input type="text" id="username" placeholder="Enter Minecraft Username">
         <button id="fetch-btn" onclick="loadStats()">Get stats</button>
+        <select id="sel"></select>
         <div id="stats"></div>
     `;
 });
@@ -26,7 +27,6 @@ async function loadStats() {
     playerdata = await fetchStats(username);
     document.getElementById('stats').innerHTML = `
         <h1>${username}</h1>
-        <select id="sel"></select>
         <p>${JSON.stringify(playerdata, null, 2)}</p>
     `;
 
