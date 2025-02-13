@@ -34,18 +34,17 @@ async function fetchBazaarData() {
 }
 
 function updateBazaarData(bazaarData) {
-    /*
     let displayData = '<h2>Bazaar Prices</h2><ul>';
     for (const item in bazaarData) {
         displayData += `<li>${item}: Buy price ${bazaarData[item].quick_status.buyPrice} | Sell price ${bazaarData[item].quick_status.sellPrice}</li>`;
     }
-    displayData += '</ul>';*/
-    bazaarData.forEach(item => {
+    displayData += '</ul>';
+    /*bazaarData.forEach(item => {
         const listItem = document.createElement('li');
         listItem.textContent = `${item.name}: ${item.price}`;
         itemList.appendChild(listItem);
-    });
-    document.getElementById('bzdata').appendChild(listItem);
+    });*/
+    document.getElementById('bzdata').appendChild(displayData);
 }
 
 // Fetch data immediately and set interval to fetch every minute
