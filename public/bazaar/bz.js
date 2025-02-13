@@ -34,11 +34,13 @@ async function fetchBazaarData() {
 }
 
 function updateBazaarData(bazaarData) {
+    /*
     let displayData = '<h2>Bazaar Prices</h2><ul>';
     for (const item in bazaarData) {
         displayData += `<li>${item}: Buy price ${bazaarData[item].quick_status.buyPrice} | Sell price ${bazaarData[item].quick_status.sellPrice}</li>`;
     }
-    displayData += '</ul>';
+    displayData += '</ul>';*/
+    let displayData = bazaarData;
     document.getElementById('bzdata').innerHTML = displayData;
 }
 
