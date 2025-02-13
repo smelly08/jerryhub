@@ -13,15 +13,11 @@
     },
     {
       "src": "^/profile/?$",
-      "dest": "/profile/profile.html"
+      "dest": "/public/profile/profile.html"
     },
     {
       "src": "^/bazaar/?$",
-      "dest": "/bazaar/bazaar.html"
-    },
-    {
-      "src": "^/extra/?$",
-      "dest": "/extra/extra.html"
+      "dest": "/public/bazaar/bazaar.html"
     }
   ]
 }
