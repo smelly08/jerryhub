@@ -2,8 +2,7 @@ addEventListener("load", (event) => {
     document.getElementById("main").innerHTML = `
         <h1>Bazaar</h1>
         <input type="text" id="username" placeholder="Enter Minecraft Username">
-        <button id="fetch-btn" onclick="loadStats()">Get stats</button>
-        <select id="sel"><option value="">Select a profile</option></select>
+        <button id="fetch-btn" onclick="fetchBazaarData()">Get stats</button>
         <div id="bzdata"></div>
     `;
 });
