@@ -8,8 +8,20 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "src": "^/$",
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/profile/?$",
+      "dest": "/profile/profile.html"
+    },
+    {
+      "src": "^/bazaar/?$",
+      "dest": "/bazaar/bazaar.html"
+    },
+    {
+      "src": "^/extra/?$",
+      "dest": "/extra/extra.html"
     }
   ]
 }
