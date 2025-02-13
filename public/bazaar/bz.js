@@ -44,7 +44,7 @@ function updateBazaarData(bazaarData) {
         listItem.textContent = `${item.name}: ${item.price}`;
         itemList.appendChild(listItem);
     });*/
-    document.getElementById('bzdata').appendChild(displayData);
+    document.getElementById('bzdata').innerHTML = displayData;
 }
 
 // Fetch data immediately and set interval to fetch every minute
