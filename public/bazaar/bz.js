@@ -18,7 +18,18 @@ async function fetchBazaarData() {
             throw new Error('Failed');
         }
     } catch (error) {
-        document.getElementById('bzdata').innerText = 'Error fetching data: ' + error.message;
+        try {
+            const corsresponse = await fetch('https://api.codetabs.com/v1/tmp/?quest=https://api.hypixel.net/skyblock/bazaar');
+            const corsdata = await corsresponse.json();
+
+            if (corsdata.success) {
+                updateBazaarData(corsdata.data);
+            } else {
+                throw new Error("Failed to retrieve data.");
+            }
+        } catch (error) {
+            document.getElementById('bzdata').innerText = 'Error fetching data: ' + error.message;
+        }
     }
 }
 
