@@ -1,3 +1,13 @@
+addEventListener("load", (event) => {
+    document.getElementById("main").innerHTML = `
+        <h1>Bazaar</h1>
+        <input type="text" id="username" placeholder="Enter Minecraft Username">
+        <button id="fetch-btn" onclick="loadStats()">Get stats</button>
+        <select id="sel"><option value="">Select a profile</option></select>
+        <div id="bzdata"></div>
+    `;
+});
+
 async function fetchBazaarData() {
     try {
         const response = await fetch('https://api.hypixel.net/skyblock/bazaar');
