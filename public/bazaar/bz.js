@@ -1,8 +1,8 @@
 addEventListener("load", (event) => {
     document.getElementById("main").innerHTML = `
         <h1>Bazaar</h1>
-        <input type="text" id="username" placeholder="Enter Minecraft Username">
-        <button id="fetch-btn" onclick="fetchBazaarData()">Get stats</button>
+        <input type="text" id="username" placeholder="Search for an item">
+        <button id="fetch-btn" onclick="fetchBazaarData()">Reload prices (automatically updates every minute)</button>
         <div id="bzdata"></div>
     `;
 });
