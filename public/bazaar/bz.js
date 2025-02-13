@@ -23,7 +23,7 @@ async function fetchBazaarData() {
             const corsdata = await corsresponse.json();
 
             if (corsdata.success) {
-                updateBazaarData(corsdata.data);
+                updateBazaarData(JSON.stringify(corsdata));
             } else {
                 throw new Error("Failed to retrieve data.");
             }
