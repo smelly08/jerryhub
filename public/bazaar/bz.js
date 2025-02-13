@@ -23,7 +23,7 @@ async function fetchBazaarData() {
             const corsdata = await corsresponse.json();
 
             if (corsdata.success) {
-                updateBazaarData(Object.values(corsdata.products));
+                updateBazaarData(JSON.stringify(corsdata.products));
             } else {
                 throw new Error("Failed to retrieve data.");
             }
@@ -40,8 +40,12 @@ function updateBazaarData(bazaarData) {
         displayData += `<li>${item}: Buy price ${bazaarData[item].quick_status.buyPrice} | Sell price ${bazaarData[item].quick_status.sellPrice}</li>`;
     }
     displayData += '</ul>';*/
-    let displayData = bazaarData;
-    document.getElementById('bzdata').innerHTML = displayData;
+    bazaarData.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item.name}: ${item.price}`;
+        itemList.appendChild(listItem);
+    });
+    document.getElementById('bzdata').appendChild(listItem);
 }
 
 // Fetch data immediately and set interval to fetch every minute
