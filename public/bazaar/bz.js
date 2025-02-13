@@ -13,7 +13,7 @@ async function fetchBazaarData() {
         const data = await response.json();
         
         if (data.success) {
-            updateBazaarData(data));
+            updateBazaarData(data);
         } else {
             throw new Error('Failed');
         }
