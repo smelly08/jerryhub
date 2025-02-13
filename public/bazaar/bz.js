@@ -17,10 +17,10 @@ async function fetchBazaarData() {
         } else {
             try {
                 const response2 = await fetch('https://api.codetabs.com/v1/tmp/?quest=https://api.hypixel.net/skyblock/bazaar');
-                const data = await response.json();
+                const data2 = await response2.json();
 
-                if (data.success) {
-                    updateBazaarData(data.data);
+                if (data2.success) {
+                    updateBazaarData(data2.data);
                 } else {
                     throw new Error("Failed to retrieve data.");
                 }
