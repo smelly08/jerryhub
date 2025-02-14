@@ -113,7 +113,7 @@ function updateBazaarData(bazaarData, updated) {
 
     for (const item in bazaarData) {
         const buyPrice = Math.round(bazaarData[item].quick_status.buyPrice * 10) / 10;
-        const sellPrice = Math.round(bazaarData[item].quick_status.sellPrice * 10) / 10;
+        const sellPrice = Math.round((bazaarData[item].quick_status.sellPrice ? 0) * 10) / 10;
 
         console.log(bazaarData[item].sell_summary[0]);
         
