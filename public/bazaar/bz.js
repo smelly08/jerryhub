@@ -61,7 +61,7 @@ style.innerHTML = `
             -2px 4px black;
     }
     .green {
-        color: #55ff55;
+        color: #00AA00;
     }
 `;
 document.head.appendChild(style);
