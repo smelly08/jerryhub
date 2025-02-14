@@ -13,7 +13,7 @@ async function fetchBazaarData() {
         const data = await response.json();
         
         if (data.success) {
-            updateBazaarData(data);
+            updateBazaarData(data, data.lastUpdated);
         } else {
             throw new Error('Failed');
         }
@@ -23,7 +23,7 @@ async function fetchBazaarData() {
             const corsdata = await corsresponse.json();
 
             if (corsdata.success) {
-                updateBazaarData(corsdata.products);
+                updateBazaarData(corsdata.products, corsdata.lastUpdated);
             } else {
                 throw new Error("Failed to retrieve data.");
             }
@@ -33,7 +33,7 @@ async function fetchBazaarData() {
     }
 }
 
-function updateBazaarData(bazaarData) {
+function updateBazaarData(bazaarData, updated) {
     // Create an array to hold items and their margins
     const itemList = [];
 
@@ -55,7 +55,7 @@ function updateBazaarData(bazaarData) {
     itemList.sort((a, b) => b.margin - a.margin);
 
     // Create display data
-    let displayData = '<h2>Bazaar Prices (Sorted by Margin)</h2><ul>';
+    let displayData = `<h2>Bazaar Prices (Sorted by Margin) - Last updated at ${new Date(updated).toLocaleTimeString("en-US")}</h2><ul>`;
     itemList.forEach(item => {
         displayData += `<li>${item.name}: Buy price ${item.buyPrice} | Sell price ${item.sellPrice} | Margin ${item.margin}</li>`;
     });
