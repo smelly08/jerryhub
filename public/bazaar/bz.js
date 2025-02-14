@@ -61,17 +61,17 @@ style.innerHTML = `
             -4px 2px black,
             -2px 4px black;
     }
+    p {
+        display: inline-block;
+    }
     .green {
         color: #00AA00;
-        display: inline-block;
     }
     .gold {
         color: #FFAA00;
-        display: inline-block;
     }
     .blue {
         color: #0000AA;
-        display: inline-block;
     }
 `;
 document.head.appendChild(style);
