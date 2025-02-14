@@ -157,12 +157,12 @@ function displayItems(items) {
         displayData += `
             <div class="grid-item">
                 <strong>${item.name}</strong><br>
-                <p>Buy order: <span class="gold">${item.sellPrice.toLocaleString()}</span></p>
-                <p>Sell order: <span class="gold">${item.buyPrice.toLocaleString()}</span></p>
-                <p>Margin: <span class="gold">${item.margin.toLocaleString()}</span></p>
-                <p>1h instabuys: <span class="blue">${item.instaBuy.toLocaleString()}</span></p>
-                <p>1h instasells: <span class="blue">${item.instaSell.toLocaleString()}</span></p>
-                <p>Coins per Hour: <span class="green">${item.hourlyProfit.toLocaleString()}</span></p>
+                <p>Buy order: <span class="gold">${item.sellPrice.toLocaleString()}</span><br>
+                Sell order: <span class="gold">${item.buyPrice.toLocaleString()}</span><br>
+                Margin: <span class="gold">${item.margin.toLocaleString()}</span><br>
+                1h instabuys: <span class="blue">${item.instaBuy.toLocaleString()}</span><br>
+                1h instasells: <span class="blue">${item.instaSell.toLocaleString()}</span><br>
+                <p>Coins per Hour: <span class="green">${item.hourlyProfit.toLocaleString()}</span><br>
             </div>
         `;
     });
