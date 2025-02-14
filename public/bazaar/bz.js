@@ -18,15 +18,42 @@ style.innerHTML = `
         margin-top: 20px;
     }
     .grid-item {
-        background-color: #f4f4f4;
-        border: 1px solid #ccc;
-        border-radius: 5px;
         padding: 10px;
         text-align: center;
         transition: background-color 0.3s;
-    }
-    .grid-item:hover {
-        background-color: #e1e1e1;
+        background-color: #333333;
+        box-shadow:
+            /* Right & bottom */
+            4px 0 #555,
+            6px 0 black,
+            0 4px #555,
+            0 6px black,
+            /* Left & top */
+            -4px 0 white,
+            -6px 0 black,
+            0 -4px white,
+            0 -6px black,
+            /* Corner right bottom */
+            4px 2px #555,
+            2px 4px #555,
+            2px 6px black,
+            6px 2px black,
+            4px 4px black,
+            /* Corner top right */
+            2px -2px #C6C6C6,
+            4px -2px black,
+            2px -4px black,
+            /* Corner top left */
+            -4px -2px white,
+            -2px -4px white,
+            -2px -6px black,
+            -6px -2px black,
+            -4px -4px black,
+            /* Corner bottom left */
+            -2px 2px #C6C6C6,
+            -4px 2px black,
+            -2px 4px black;
+}
     }
 `;
 document.head.appendChild(style);
