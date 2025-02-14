@@ -174,14 +174,19 @@ function displayItems(items) {
 
 // Function to filter items based on the search input
 function filterItems() {
-    const searchTerm = document.getElementById('usename').value.toLowerCase();
-    const filteredItems = globalItemList.filter(item => item.name.toLowerCase().includes(searchTerm));
-    displayItems(filteredItems); // Display filtered items
+    const searchTerm = document.getElementById('username').value.toLowerCase();
+    if (searchTerm && searchTerm.length >= 1) {
+        const filteredItems = globalItemList.filter(item => item.name.toLowerCase().includes(searchTerm));
+        displayItems(filteredItems); // Display filtered items
+    } else {
+        displayItems(globalItemList);
+    }
 }
 
 const searchBar = document.getElementById("username");
 
 searchBar.addEventListener("change", (event) => {
+    alert("hi");
     filterItems();
 });
 // Fetch data immediately and set interval to fetch every minute
