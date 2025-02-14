@@ -21,6 +21,8 @@ style.innerHTML = `
     .grid-item {
         padding: 10px;
         text-align: center;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         transition: background-color 0.3s;
