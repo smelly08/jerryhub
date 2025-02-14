@@ -63,12 +63,15 @@ style.innerHTML = `
     }
     .green {
         color: #00AA00;
+        display: inline-block;
     }
     .gold {
         color: #FFAA00;
+        display: inline-block;
     }
     .blue {
         color: #0000AA;
+        display: inline-block;
     }
 `;
 document.head.appendChild(style);
