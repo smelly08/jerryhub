@@ -182,7 +182,7 @@ function filterItems() {
 const searchBar = document.getElementById("username");
 
 searchBar.addEventListener("change", (event) => {
-      filterItems(event.target.value);
+    filterItems();
 });
 // Fetch data immediately and set interval to fetch every minute
 fetchBazaarData();
