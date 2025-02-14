@@ -21,6 +21,8 @@ style.innerHTML = `
     .grid-item {
         padding: 10px;
         text-align: center;
+        justify-content: center;
+        align-items: center;
         transition: background-color 0.3s;
         background-color: #C6C6C6;
         color: #555555;
@@ -55,7 +57,6 @@ style.innerHTML = `
             -2px 2px #C6C6C6,
             -4px 2px black,
             -2px 4px black;
-}
     }
 `;
 document.head.appendChild(style);
