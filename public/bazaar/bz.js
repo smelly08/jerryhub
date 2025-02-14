@@ -68,12 +68,11 @@ style.innerHTML = `
     .flex-container {
         display: flex;                     /* Use flexbox */
         align-items: center;              /* Vertically center align items */
-        margin-bottom: 5px;               /* Space between each line */
+        margin-bottom: -5px;               /* Space between each line */
     }
     
     .flex-container p {
-        margin: 0;                        /* Remove default margin from p */
-        margin-top: -1rem;
+        margin: 0;
     }
     .green {
         color: #00AA00;
