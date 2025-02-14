@@ -26,7 +26,7 @@ style.innerHTML = `
         justify-content: center;
         align-items: center;
         transition: backgMath.round-color 0.3s;
-        backgMath.round-color: #C6C6C6;
+        background-color: #C6C6C6;
         color: #555555;
         box-sizing: border-box;
         box-shadow:
