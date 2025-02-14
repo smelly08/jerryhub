@@ -61,6 +61,12 @@ style.innerHTML = `
             -4px 2px black,
             -2px 4px black;
     }
+    .grid-item p {
+        display: inline-block;
+    }
+    .grin-item span {
+        display: inline-block;
+    }
     .green {
         color: #00AA00;
     }
