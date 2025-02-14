@@ -19,7 +19,7 @@ style.innerHTML = `
     .grid-container {
         display: grid;
         width: 90%;
-        grid-template-columns: repeat(auto-fill, minmax(4, 1fr)); /* Flexible column sizing */
+        grid-template-columns: repeat(4, 1fr);
         gap: 10px;
         margin-top: 20px;
     }
