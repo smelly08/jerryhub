@@ -28,6 +28,7 @@ style.innerHTML = `
         transition: background-color 0.3s;
         background-color: #C6C6C6;
         color: #555555;
+        box-sizing: border-box;
         box-shadow:
             /* Right & bottom */
             4px 0 #555,
