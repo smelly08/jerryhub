@@ -138,7 +138,7 @@ function updateBazaarData(bazaarData, updated) {
                 Margin: ${item.margin.toLocaleString()}<br>
                 Insta Buy: ${item.instaBuy.toLocaleString()}<br>
                 Insta Sell: ${item.instaSell.toLocaleString()}<br>
-                Coins per Hour: <span class="green">${item.hourlyProfit.toLocaleString()}</span>
+                <p>Coins per Hour: <span class="green">${item.hourlyProfit.toLocaleString()}</span></p>
             </div>
         `;
     });
