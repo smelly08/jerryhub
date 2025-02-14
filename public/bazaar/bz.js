@@ -13,6 +13,7 @@ const style = document.createElement('style');
 style.innerHTML = `
     .grid-container {
         display: grid;
+        width: 90%;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flexible column sizing */
         gap: 10px;
         margin-top: 20px;
@@ -21,7 +22,7 @@ style.innerHTML = `
         padding: 10px;
         text-align: center;
         transition: background-color 0.3s;
-        background-color: #333333;
+        background-color: #C6C6C6;
         box-shadow:
             /* Right & bottom */
             4px 0 #555,
