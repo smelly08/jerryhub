@@ -64,11 +64,15 @@ style.innerHTML = `
             -4px 2px black,
             -2px 4px black;
     }
-    .grid-item p {
-        display: flex;                     /* Enable Flexbox */
-        justify-content: space-between;    /* Space between elements */
-        align-items: center;               /* Align items vertically centered */
-        margin: 5px 0;                     /* Margin for the paragraphs */
+    
+    .flex-container {
+    display: flex;                     /* Use flexbox */
+    align-items: center;              /* Vertically center align items */
+    margin-bottom: 5px;               /* Space between each line */
+    }
+    
+    .flex-container p {
+        margin: 0;                        /* Remove default margin from p */
     }
     .green {
         color: #00AA00;
@@ -156,13 +160,31 @@ function displayItems(items) {
     items.forEach(item => {
         displayData += `
             <div class="grid-item">
-                <strong>${item.name}</strong><br>
-                <p>Buy order: <span class="gold">${item.sellPrice.toLocaleString()}</span><br>
-                Sell order: <span class="gold">${item.buyPrice.toLocaleString()}</span><br>
-                Margin: <span class="gold">${item.margin.toLocaleString()}</span><br>
-                1h instabuys: <span class="blue">${item.instaBuy.toLocaleString()}</span><br>
-                1h instasells: <span class="blue">${item.instaSell.toLocaleString()}</span><br>
-                <p>Coins per Hour: <span class="green">${item.hourlyProfit.toLocaleString()}</span><br>
+            <strong>${item.name}</strong><br>
+            <div class="flex-container">
+                <p>Buy order:</p>
+                <span class="gold">${item.sellPrice.toLocaleString()}</span>
+            </div>
+            <div class="flex-container">
+                <p>Sell order:</p>
+                <span class="gold">${item.buyPrice.toLocaleString()}</span>
+            </div>
+            <div class="flex-container">
+                <p>Margin:</p>
+                <span class="gold">${item.margin.toLocaleString()}</span>
+            </div>
+            <div class="flex-container">
+                <p>1h instabuys:</p>
+                <span class="blue">${item.instaBuy.toLocaleString()}</span>
+            </div>
+            <div class="flex-container">
+                <p>1h instasells:</p>
+                <span class="blue">${item.instaSell.toLocaleString()}</span>
+            </div>
+            <div class="flex-container">
+                <p>Coins per Hour:</p>
+                <span class="green">${item.hourlyProfit.toLocaleString()}</span>
+            </div>
             </div>
         `;
     });
