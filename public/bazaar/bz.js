@@ -11,7 +11,76 @@ addEventListener("load", (event) => {
     document.getElementById('username').addEventListener('input', filterItems);
 });
 
-// CSS added here...
+// Add CSS for bz page
+const style = document.createElement('style');
+style.innerHTML = `
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 10px;
+        margin-top: 20px;
+        justify-content: center;
+    }
+    .grid-item {
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: backgMath.round-color 0.3s;
+        background-color: #C6C6C6;
+        color: #555555;
+        box-sizing: border-box;
+        box-shadow:
+            /* Right & bottom */
+            4px 0 #555,
+            6px 0 black,
+            0 4px #555,
+            0 6px black,
+            /* Left & top */
+            -4px 0 white,
+            -6px 0 black,
+            0 -4px white,
+            0 -6px black,
+            /* Corner right bottom */
+            4px 2px #555,
+            2px 4px #555,
+            2px 6px black,
+            6px 2px black,
+            4px 4px black,
+            /* Corner top right */
+            2px -2px #C6C6C6,
+            4px -2px black,
+            2px -4px black,
+            /* Corner top left */
+            -4px -2px white,
+            -2px -4px white,
+            -2px -6px black,
+            -6px -2px black,
+            -4px -4px black,
+            /* Corner bottom left */
+            -2px 2px #C6C6C6,
+            -4px 2px black,
+            -2px 4px black;
+    }
+    .grid-item p {
+        display: flex;                     /* Enable Flexbox */
+        justify-content: space-between;    /* Space between elements */
+        align-items: center;               /* Align items vertically centered */
+        margin: 5px 0;                     /* Margin for the paragraphs */
+    }
+    .green {
+        color: #00AA00;
+    }
+    .gold {
+        color: #FFAA00;
+    }
+    .blue {
+        color: #0000AA;
+    }
+`;
+document.head.appendChild(style);
 
 async function fetchBazaarData() {
     try {
