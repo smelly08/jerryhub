@@ -11,14 +11,8 @@ addEventListener("load", (event) => {
 // Add CSS for grid layout
 const style = document.createElement('style');
 style.innerHTML = `
-    #bzdata {
-        width: 90%;
-        align-items: center;
-        justify-content: center;
-    }
     .grid-container {
         display: grid;
-        width: 90%;
         grid-template-columns: repeat(4, 1fr);
         gap: 10px;
         margin-top: 20px;
