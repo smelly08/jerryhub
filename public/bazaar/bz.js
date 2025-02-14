@@ -90,7 +90,8 @@ function updateBazaarData(bazaarData, updated) {
 
     // Create display data in grid format
     document.getElementById('lastUpdated').innerHTML = `Last updated at ${new Date(updated).toLocaleTimeString("en-US")}`;
-    displayData += '<div class="grid-container">';
+
+    let displayData = '<div class="grid-container">';
     itemList.forEach(item => {
         displayData += `
             <div class="grid-item">
