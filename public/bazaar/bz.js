@@ -61,8 +61,11 @@ style.innerHTML = `
             -4px 2px black,
             -2px 4px black;
     }
-    span {
-        display: inline-block;
+    .grid-item p {
+        display: flex;                     /* Enable Flexbox */
+        justify-content: space-between;    /* Space between elements */
+        align-items: center;               /* Align items vertically centered */
+        margin: 5px 0;                     /* Margin for the paragraphs */
     }
     .green {
         color: #00AA00;
