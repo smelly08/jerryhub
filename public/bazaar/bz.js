@@ -13,7 +13,7 @@ const style = document.createElement('style');
 style.innerHTML = `
     .grid-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 10px;
         margin-top: 20px;
         justify-content: center;
