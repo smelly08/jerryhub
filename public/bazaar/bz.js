@@ -2,7 +2,7 @@ addEventListener("load", (event) => {
     document.getElementById("main").innerHTML = `
         <h1>Bazaar</h1>
         <p id="lastUpdated"></p>
-        <input type="text" id="username" placeholder="Search for an item">
+        <input type="text" id="search" placeholder="Search for an item">
         <button id="fetch-btn" onclick="fetchBazaarData()">Reload prices (automatically updates every minute)</button>
         <div id="bzdata" class="grid-container"></div>
     `;
@@ -105,7 +105,7 @@ function displayItems(items) {
 
 // Function to filter items based on the search input
 function filterItems() {
-    const searchTerm = document.getElementById('username').value.toLowerCase();
+    const searchTerm = document.getElementById('search').value.toLowerCase();
     const filteredItems = globalItemList.filter(item => item.name.toLowerCase().includes(searchTerm));
     displayItems(filteredItems); // Display filtered items
 }
