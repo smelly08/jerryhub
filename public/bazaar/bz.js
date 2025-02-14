@@ -34,7 +34,7 @@ async function fetchBazaarData() {
 }
 
 function updateBazaarData(bazaarData, updated) {
-    // Create an array to hold items and their margins
+    // Create an array to hold items and their metrics
     const itemList = [];
 
     for (const item in bazaarData) {
@@ -42,12 +42,22 @@ function updateBazaarData(bazaarData, updated) {
         const sellPrice = bazaarData[item].quick_status.sellPrice;
         const margin = buyPrice - sellPrice;
 
+        // Mockup of buyMovingWeek and sellMovingWeek for the demonstration
+        const buyMovingWeek = bazaarData[item].quick_status.buyMovingWeek || 0; // Replace with actual buy-moving-week data
+        const sellMovingWeek = bazaarData[item].quick_status.sellMovingWeek || 0; // Replace with actual sell-moving-week data
+
+        // Calculate one-hour insta-sells and insta-buys
+        const instaBuy = buyMovingWeek / 168;
+        const instaSell = sellMovingWeek / 168;
+
         // Push item details into the array
         itemList.push({
             name: item,
             buyPrice,
             sellPrice,
             margin,
+            instaBuy,
+            instaSell,
         });
     }
 
@@ -57,14 +67,13 @@ function updateBazaarData(bazaarData, updated) {
     // Create display data
     let displayData = `<h2>Bazaar Prices (Sorted by Margin) - Last updated at ${new Date(updated).toLocaleTimeString("en-US")}</h2><ul>`;
     itemList.forEach(item => {
-        displayData += `<li>${item.name}: Buy price ${item.buyPrice} | Sell price ${item.sellPrice} | Margin ${item.margin}</li>`;
+        displayData += `<li>${item.name}: Buy price ${item.buyPrice} | Sell price ${item.sellPrice} | Margin ${item.margin} | One hour Insta Buys ${item.instaBuy} | One hour Insta Sell ${item.instaSell}</li>`;
     });
     displayData += '</ul>';
 
     // Update the HTML with sorted data
     document.getElementById('bzdata').innerHTML = displayData;
 }
-
 
 // Fetch data immediately and set interval to fetch every minute
 fetchBazaarData();
