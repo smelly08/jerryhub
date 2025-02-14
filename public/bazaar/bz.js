@@ -61,7 +61,7 @@ style.innerHTML = `
             -4px 2px black,
             -2px 4px black;
     }
-    p {
+    span {
         display: inline-block;
     }
     .green {
