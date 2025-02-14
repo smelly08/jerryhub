@@ -130,12 +130,12 @@ function updateBazaarData(bazaarData, updated) {
         displayData += `
             <div class="grid-item">
                 <strong>${item.name}</strong><br>
-                Buy: ${item.buyPrice}<br>
-                Sell: ${item.sellPrice}<br>
-                Margin: ${item.margin}<br>
-                Insta Buy: ${item.instaBuy}<br>
-                Insta Sell: ${item.instaSell}<br>
-                Coins per Hour: ${item.hourlyProfit}
+                Buy: ${item.buyPrice.toLocaleString()}<br>
+                Sell: ${item.sellPrice.toLocaleString()}<br>
+                Margin: ${item.margin.toLocaleString()}<br>
+                Insta Buy: ${item.instaBuy.toLocaleString()}<br>
+                Insta Sell: ${item.instaSell.toLocaleString()}<br>
+                Coins per Hour: <span class="green">${item.hourlyProfit.toLocaleString()}</span>
             </div>
         `;
     });
