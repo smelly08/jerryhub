@@ -185,7 +185,7 @@ function filterItems() {
 
 const searchBar = document.getElementById("username");
 
-searchBar.addEventListener("change", (event) => {
+searchBar.addEventListener("input", (event) => {
     alert("hi");
     filterItems();
 });
