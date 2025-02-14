@@ -1,6 +1,3 @@
-Sure! To create a grid layout where the best option is in the top right and the worst is in the bottom left, we need to use CSS Grid. Below is the modified code to achieve that. I've restructured the displayData portion to create a grid layout using CSS. 🔍✨
-
-```javascript
 addEventListener("load", (event) => {
     document.getElementById("main").innerHTML = `
         <h1>Bazaar</h1>
@@ -114,6 +111,3 @@ function updateBazaarData(bazaarData, updated) {
 // Fetch data immediately and set interval to fetch every minute
 fetchBazaarData();
 setInterval(fetchBazaarData, 60000);
-```
-
-In this code, I've added CSS styles to create a grid layout for the items with a hover effect. Each item is represented as a grid item within the grid container. The items are displayed in a neat card format that allows for better readability and organization. 🛍️🌟
