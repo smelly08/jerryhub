@@ -34,18 +34,37 @@ async function fetchBazaarData() {
 }
 
 function updateBazaarData(bazaarData) {
-    let displayData = '<h2>Bazaar Prices</h2><ul>';
+    // Create an array to hold items and their margins
+    const itemList = [];
+
     for (const item in bazaarData) {
-        displayData += `<li>${item}: Buy price ${bazaarData[item].quick_status.buyPrice} | Sell price ${bazaarData[item].quick_status.sellPrice}</li>`;
+        const buyPrice = bazaarData[item].quick_status.buyPrice;
+        const sellPrice = bazaarData[item].quick_status.sellPrice;
+        const margin = buyPrice - sellPrice;
+
+        // Push item details into the array
+        itemList.push({
+            name: item,
+            buyPrice,
+            sellPrice,
+            margin,
+        });
     }
+
+    // Sort the items based on margin from highest to lowest
+    itemList.sort((a, b) => b.margin - a.margin);
+
+    // Create display data
+    let displayData = '<h2>Bazaar Prices (Sorted by Margin)</h2><ul>';
+    itemList.forEach(item => {
+        displayData += `<li>${item.name}: Buy price ${item.buyPrice} | Sell price ${item.sellPrice} | Margin ${item.margin}</li>`;
+    });
     displayData += '</ul>';
-    /*bazaarData.forEach(item => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${item.name}: ${item.price}`;
-        itemList.appendChild(listItem);
-    });*/
+
+    // Update the HTML with sorted data
     document.getElementById('bzdata').innerHTML = displayData;
 }
+
 
 // Fetch data immediately and set interval to fetch every minute
 fetchBazaarData();
