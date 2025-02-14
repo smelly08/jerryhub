@@ -74,7 +74,7 @@ style.innerHTML = `
         color: #FFAA00;
     }
     .blue {
-        color: #0000AA;
+        color: #5555FF;
     }
 `;
 document.head.appendChild(style);
