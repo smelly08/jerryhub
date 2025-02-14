@@ -60,6 +60,9 @@ style.innerHTML = `
             -4px 2px black,
             -2px 4px black;
     }
+    .green {
+        color: #ff55ff;
+    }
 `;
 document.head.appendChild(style);
 
