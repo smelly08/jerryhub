@@ -1,6 +1,7 @@
 addEventListener("load", (event) => {
     document.getElementById("main").innerHTML = `
         <h1>Bazaar</h1>
+        <p id="lastUpdated"></p>
         <input type="text" id="username" placeholder="Search for an item">
         <button id="fetch-btn" onclick="fetchBazaarData()">Reload prices (automatically updates every minute)</button>
         <div id="bzdata" class="grid-container"></div>
@@ -12,7 +13,7 @@ const style = document.createElement('style');
 style.innerHTML = `
     .grid-container {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flexible column sizing */
         gap: 10px;
         margin-top: 20px;
     }
@@ -84,11 +85,12 @@ function updateBazaarData(bazaarData, updated) {
         });
     }
 
-    // Sort the items based on margin; high margin first
+    // Sort the items based on margin from highest to lowest
     itemList.sort((a, b) => b.margin - a.margin);
 
     // Create display data in grid format
-    let displayData = `<h2>Bazaar Prices (Sorted by Margin) - Last updated at ${new Date(updated).toLocaleTimeString("en-US")}</h2>`;
+    document.getElementById('lastUpdated').innerHTML = `Last updated at ${new Date(updated).toLocaleTimeString("en-US")}`;
+    let displayData = `<h2 class="grid-title">Bazaar Prices (Sorted by Margin)</h2>`;
     displayData += '<div class="grid-container">';
     itemList.forEach(item => {
         displayData += `
