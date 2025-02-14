@@ -106,6 +106,7 @@ function updateBazaarData(bazaarData, updated) {
         const instaBuy = buyMovingWeek / 168;
         const instaSell = sellMovingWeek / 168;
 
+        const hourlyProfit = Math.min(instaBuy, instaSell) * margin;
         // Push item details into the array
         itemList.push({
             name: item,
@@ -114,11 +115,12 @@ function updateBazaarData(bazaarData, updated) {
             margin,
             instaBuy,
             instaSell,
+            hourlyProfit
         });
     }
 
     // Sort the items based on margin from highest to lowest
-    itemList.sort((a, b) => b.margin - a.margin);
+    itemList.sort((a, b) => b.hourlyProfit);
 
     // Create display data in grid format
     document.getElementById('lastUpdated').innerHTML = `Last updated at ${new Date(updated).toLocaleTimeString("en-US")}`;
@@ -132,7 +134,8 @@ function updateBazaarData(bazaarData, updated) {
                 Sell: ${item.sellPrice}<br>
                 Margin: ${item.margin}<br>
                 Insta Buy: ${item.instaBuy}<br>
-                Insta Sell: ${item.instaSell}
+                Insta Sell: ${item.instaSell}<br>
+                Coins per Hour: ${item.hourlyProfit}
             </div>
         `;
     });
