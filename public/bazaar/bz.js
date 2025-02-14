@@ -25,8 +25,8 @@ style.innerHTML = `
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: background-color 0.3s;
-        background-color: #C6C6C6;
+        transition: backgMath.round-color 0.3s;
+        backgMath.round-color: #C6C6C6;
         color: #555555;
         box-sizing: border-box;
         box-shadow:
@@ -110,8 +110,8 @@ function updateBazaarData(bazaarData, updated) {
     const itemList = [];
 
     for (const item in bazaarData) {
-        const buyPrice = round(bazaarData[item].quick_status.buyPrice * 10) / 10;
-        const sellPrice = round(bazaarData[item].quick_status.sellPrice * 10) / 10;
+        const buyPrice = Math.round(bazaarData[item].quick_status.buyPrice * 10) / 10;
+        const sellPrice = Math.round(bazaarData[item].quick_status.sellPrice * 10) / 10;
         const margin = buyPrice - sellPrice;
 
         // Mockup of buyMovingWeek and sellMovingWeek for the demonstration
@@ -119,10 +119,10 @@ function updateBazaarData(bazaarData, updated) {
         const sellMovingWeek = bazaarData[item].quick_status.sellMovingWeek || 0; // Replace with actual sell-moving-week data
 
         // Calculate one-hour insta-sells and insta-buys
-        const instaBuy = round(buyMovingWeek / 168);
-        const instaSell = round(sellMovingWeek / 168);
+        const instaBuy = Math.round(buyMovingWeek / 168);
+        const instaSell = Math.round(sellMovingWeek / 168);
 
-        const hourlyProfit = round(Math.min(instaBuy, instaSell) * margin * 10) / 10;
+        const hourlyProfit = Math.round(Math.min(instaBuy, instaSell) * margin * 10) / 10;
         // Push item details into the array
         itemList.push({
             name: item,
