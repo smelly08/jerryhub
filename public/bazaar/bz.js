@@ -175,7 +175,8 @@ function displayItems(items) {
 // Function to filter items based on the search input
 function filterItems() {
     const searchTerm = document.getElementById('username').value.toLowerCase();
-    if (searchTerm && searchTerm.length >= 1) {
+    alert(searchTerm);
+    if (searchTerm) {
         const filteredItems = globalItemList.filter(item => item.name.toLowerCase().includes(searchTerm));
         displayItems(filteredItems); // Display filtered items
     } else {
