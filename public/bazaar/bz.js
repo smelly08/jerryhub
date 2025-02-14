@@ -24,10 +24,7 @@ style.innerHTML = `
     .grid-item {
         padding: 10px;
         text-align: center;
-        display: flex;
-        flex-direction: column;
         justify-content: center;
-        align-items: center;
         transition: backgMath.round-color 0.3s;
         background-color: #C6C6C6;
         color: #555555;
@@ -63,16 +60,6 @@ style.innerHTML = `
             -2px 2px #C6C6C6,
             -4px 2px black,
             -2px 4px black;
-    }
-    
-    .flex-container {
-        display: flex;                     /* Use flexbox */
-        align-items: center;              /* Vertically center align items */
-        margin-bottom: -5px;               /* Space between each line */
-    }
-    
-    .flex-container p {
-        margin: 0;
     }
     .green {
         color: #00AA00;
