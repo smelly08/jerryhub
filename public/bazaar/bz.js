@@ -160,31 +160,13 @@ function displayItems(items) {
     items.forEach(item => {
         displayData += `
             <div class="grid-item">
-            <strong>${item.name}</strong><br>
-            <div class="flex-container">
-                <p>Buy order:</p>
-                <span class="gold">${item.sellPrice.toLocaleString()}</span>
-            </div>
-            <div class="flex-container">
-                <p>Sell order:</p>
-                <span class="gold">${item.buyPrice.toLocaleString()}</span>
-            </div>
-            <div class="flex-container">
-                <p>Margin:</p>
-                <span class="gold">${item.margin.toLocaleString()}</span>
-            </div>
-            <div class="flex-container">
-                <p>1h instabuys:</p>
-                <span class="blue">${item.instaBuy.toLocaleString()}</span>
-            </div>
-            <div class="flex-container">
-                <p>1h instasells:</p>
-                <span class="blue">${item.instaSell.toLocaleString()}</span>
-            </div>
-            <div class="flex-container">
-                <p>Coins per Hour:</p>
-                <span class="green">${item.hourlyProfit.toLocaleString()}</span>
-            </div>
+                <strong>${item.name}</strong><br>
+                <p>Buy order: <em class="gold">${item.sellPrice.toLocaleString()}</em><br>
+                Sell order: <em class="gold">${item.buyPrice.toLocaleString()}</em><br>
+                Margin: <em class="gold">${item.margin.toLocaleString()}</em><br>
+                1h instabuys: <em class="blue">${item.instaBuy.toLocaleString()}</em><br>
+                1h instasells: <em class="blue">${item.instaSell.toLocaleString()}</em><br>
+                <p>Coins per Hour: <em class="green">${item.hourlyProfit.toLocaleString()}</em><br>
             </div>
         `;
     });
