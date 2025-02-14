@@ -66,13 +66,14 @@ style.innerHTML = `
     }
     
     .flex-container {
-    display: flex;                     /* Use flexbox */
-    align-items: center;              /* Vertically center align items */
-    margin-bottom: 5px;               /* Space between each line */
+        display: flex;                     /* Use flexbox */
+        align-items: center;              /* Vertically center align items */
+        margin-bottom: 5px;               /* Space between each line */
     }
     
     .flex-container p {
         margin: 0;                        /* Remove default margin from p */
+        margin-top: -1rem;
     }
     .green {
         color: #00AA00;
