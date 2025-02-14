@@ -185,12 +185,6 @@ function filterItems() {
         displayItems(globalItemList);
     }
 }
-
-const searchBar = document.getElementById("username");
-
-searchBar.addEventListener("input", (event) => {
-    filterItems();
-});
 // Fetch data immediately and set interval to fetch every minute
 fetchBazaarData();
 setInterval(fetchBazaarData, 60000);
