@@ -123,7 +123,7 @@ function updateBazaarData(bazaarData, updated) {
     }
 
     // Sort the items based on margin from highest to lowest
-    itemList.sort((a, b) => b.hourlyProfit);
+    itemList.sort((a, b) => b.hourlyProfit - a.hourlyProfit);
 
     // Create display data in grid format
     document.getElementById('lastUpdated').innerHTML = `Last updated at ${new Date(updated).toLocaleTimeString("en-US")}`;
