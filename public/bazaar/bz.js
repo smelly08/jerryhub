@@ -63,6 +63,12 @@ style.innerHTML = `
     .green {
         color: #00AA00;
     }
+    .gold {
+        color: #FFAA00;
+    }
+    .blue {
+        color: #0000AA;
+    }
 `;
 document.head.appendChild(style);
 
@@ -133,12 +139,12 @@ function updateBazaarData(bazaarData, updated) {
         displayData += `
             <div class="grid-item">
                 <strong>${item.name}</strong><br>
-                Buy: ${item.buyPrice.toLocaleString()}<br>
-                Sell: ${item.sellPrice.toLocaleString()}<br>
-                Margin: ${item.margin.toLocaleString()}<br>
-                Insta Buy: ${item.instaBuy.toLocaleString()}<br>
-                Insta Sell: ${item.instaSell.toLocaleString()}<br>
-                <p>Coins per Hour: <span class="green">${item.hourlyProfit.toLocaleString()}</span></p>
+                <p>Buy order price: <span class="gold">${item.sellPrice.toLocaleString()}</span><br>
+                Sell order price: <span class="gold">${item.buyPrice.toLocaleString()}</span><br>
+                Margin: <span class="gold">${item.margin.toLocaleString()}</span><br>
+                One-hour instabuys: <span class="blue">${item.instaBuy.toLocaleString()}</span><br>
+                One-hour instasells: <span class="blue">${item.instaSell.toLocaleString()}</span><br>
+                Coins per Hour: <span class="green">${item.hourlyProfit.toLocaleString()}</span></p>
             </div>
         `;
     });
