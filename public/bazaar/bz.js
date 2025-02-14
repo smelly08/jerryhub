@@ -179,6 +179,11 @@ function filterItems() {
     displayItems(filteredItems); // Display filtered items
 }
 
+const searchBar = document.getElementById("username");
+
+searchBar.addEventListener("change", (event) => {
+      filterItems(event.target.value);
+});
 // Fetch data immediately and set interval to fetch every minute
 fetchBazaarData();
 setInterval(fetchBazaarData, 60000);
