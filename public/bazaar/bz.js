@@ -176,7 +176,7 @@ function displayItems(items) {
 function filterItems() {
     const searchTerm = document.getElementById('username').value.toLowerCase();
     if (!globalItemList) {
-        updateBazaarData();
+        fetchBazaarData();
     }
     if (searchTerm) {
         const filteredItems = globalItemList.filter(item => item.name.toLowerCase().includes(searchTerm));
@@ -189,7 +189,6 @@ function filterItems() {
 const searchBar = document.getElementById("username");
 
 searchBar.addEventListener("input", (event) => {
-    alert("hi");
     filterItems();
 });
 // Fetch data immediately and set interval to fetch every minute
