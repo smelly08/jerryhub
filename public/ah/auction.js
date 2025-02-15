@@ -62,11 +62,11 @@ async function fetchAndSortAuctions() {
 
     // Sort auctions into categories
     const categories = {
-        weapons: [],
+        weapon: [],
         armor: [],
         accessories: [],
-        blocks: [],
-        tools: []
+        consumables: [],
+        misc: []
     };
 
     allAuctions.forEach(auction => {
