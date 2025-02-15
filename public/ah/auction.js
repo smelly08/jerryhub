@@ -107,8 +107,10 @@ fetchAndSortAuctions()
                 // Display the selected profile's information
                 document.getElementById('ah').innerHTML = `
                     <h2>${selectedCategory}</h2>
+                    <div id="invContainer"></div>
                     <p>${categories[selectedCategory]}</p>
                 `;
+                newInventory("invContainer", 6, "ah", "Auction House")
             }
         });
     })
