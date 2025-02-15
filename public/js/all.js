@@ -8,7 +8,7 @@ addEventListener("load", (event) => {
     homebutton.style.background = "#555555";
     document.body.appendChild(homeButton);
     
-    homeButton.addEventListener("click", (event) {
+    homeButton.addEventListener("click", (event) => {
         location.hre f= 'https://jerryhub.vercel.app';
     });
 });
