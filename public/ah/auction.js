@@ -4,6 +4,7 @@ addEventListener("load", (event) => {
         <p id="lastUpdated"></p>
         <input type="text" id="username" placeholder="Search for an item">
         <button id="fetch-btn" onclick="fetchBazaarData()">Refresh</button>
+        <select id="sel"></select>
         <div id="ah" class="grid-container"></div>
     `;
 
