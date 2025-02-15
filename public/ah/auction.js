@@ -103,7 +103,7 @@ fetchAndSortAuctions()
             // Clear previous stats
             document.getElementById('ah').innerHTML = '';
     
-            if (selectedProfile) {
+            if (selectedCategory) {
                 // Display the selected profile's information
                 document.getElementById('stats').innerHTML = `
                     <h2>${selectedCategory}</h2>
