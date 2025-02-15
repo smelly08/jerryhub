@@ -4,7 +4,7 @@ addEventListener("load", (event) => {
         <p id="lastUpdated"></p>
         <input type="text" id="username" placeholder="Search for an item">
         <button id="fetch-btn" onclick="fetchBazaarData()">Refresh</button>
-        <div id="ah" class="grid-container"></div>
+        <div id="ah" class="grid-container">Loading...</div>
     `;
 
     // Add search input event listener
