@@ -3,9 +3,9 @@ addEventListener("load", (event) => {
     homeButton.innerHTML = `
         <img src="/public/img/jerryhead.jpeg" width="24px" height="24px" />
     `;
-    homebutton.style.position = "absolute";
-    homebutton.style.padding = "20px";
-    homebutton.style.background = "#555555";
+    homeButton.style.position = "absolute";
+    homeButton.style.padding = "20px";
+    homeButton.style.background = "#555555";
     document.body.appendChild(homeButton);
     
     homeButton.addEventListener("click", (event) => {
