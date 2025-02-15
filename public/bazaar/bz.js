@@ -122,7 +122,7 @@ function updateBazaarData(bazaarData, updated) {
         // Calculate one-hour insta-sells and insta-buys
         const instaBuy = Math.round(buyMovingWeek / 168);
         const instaSell = Math.round(sellMovingWeek / 168);
-        const hourlyProfit = Math.round(Math.min(instaBuy, instaSell) * margin * 10) / 10;
+        const hourlyProfit = Math.round(Math.min(instaBuy, instaSell) * margin * 9.75) / 10;
 
         // Push item details into the array
         itemList.push({
