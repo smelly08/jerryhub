@@ -3,15 +3,15 @@ let slotitems = {};
 let guis = [];
 
 addEventListener("load", (event) => {
-    const tooltipContainer = document.createElement("div");
-    tooltipContainer.innerHTML = `
+    const tooldipDiv = document.createElement("div");
+    tooltipDiv.innerHTML = `
     <div id="body">
         <div id="tooltipContainer">
             <div id="tooltip"></div>
         </div>
     </div>
     `;
-    document.body.appendChild(tooltipContainer);
+    document.body.appendChild(tooltipDiv);
     const style = document.createElement("style");
     style.innerHTML = `
         html { height: 100%; }
