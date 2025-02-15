@@ -18,6 +18,10 @@
     {
       "src": "^/bazaar/?$",
       "dest": "/public/bazaar/bazaar.html"
+    },
+    {
+      "src": "^/auction/?$",
+      "dest": "/public/ah/auction.html"
     }
   ]
 }
