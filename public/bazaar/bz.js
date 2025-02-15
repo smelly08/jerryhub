@@ -111,7 +111,7 @@ function updateBazaarData(bazaarData, updated) {
             sellPrice = Math.round(bazaarData[item].sell_summary[0].pricePerUnit * 10) / 10;
         }
 
-        console.log(bazaarData[item].sell_summary[0]);
+        // console.log(bazaarData[item].sell_summary[0]);
         
         const margin = Math.round(((buyPrice * 0.9875) - sellPrice) * 10) / 10;
         const marginPercent = Math.round(1000 * (((buyPrice * 0.9875) / sellPrice) - 1)) / 10;
