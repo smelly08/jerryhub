@@ -9,6 +9,6 @@ addEventListener("load", (event) => {
     document.body.appendChild(homeButton);
     
     homeButton.addEventListener("click", (event) => {
-        location.hre f= 'https://jerryhub.vercel.app';
+        location.href= 'https://jerryhub.vercel.app';
     });
 });
