@@ -1,3 +1,5 @@
+import * as gui from 'https://raw.githubusercontent.com/smelly08/mcgui-html/refs/heads/main/script.js';
+
 addEventListener("load", (event) => {
     document.getElementById("main").innerHTML = `
         <h1>Auction House</h1>
