@@ -21,7 +21,7 @@ addEventListener("load", (event) => {
     `;
 
     // Add search input event listener
-    document.getElementById('username').addEventListener('input', filterItems);
+    // document.getElementById('username').addEventListener('input', filterItems);
     gui.newInventory("invContainer", 6, "ah", "Auction House");
 });
 
