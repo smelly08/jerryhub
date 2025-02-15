@@ -11,6 +11,10 @@ body {
     overflow-x: hidden;
 }
 
+#main {
+    margin: 10px;
+}
+
 .background-blur {
     position: fixed; /* Fixed position to cover the entire viewport */
     top: 0;
