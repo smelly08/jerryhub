@@ -14,11 +14,14 @@ addEventListener("load", (event) => {
             <option value="blocks">Blocks</option>
             <option value="misc">Misc</option>
         </select>
-        <div id="ah" class="grid-container"></div>
+        <div id="ah" class="grid-container">
+            <div id="invContainer"></div>
+        </div>
     `;
 
     // Add search input event listener
     document.getElementById('username').addEventListener('input', filterItems);
+    gui.newInventory("invContainer", 6, "ah", "Auction House");
 });
 
 // Add CSS for bz page
@@ -109,7 +112,6 @@ fetchAndSortAuctions()
                 // Display the selected profile's information
                 document.getElementById('ah').innerHTML = `
                     <h2>${selectedCategory}</h2>
-                    <div id="invContainer"></div>
                     <p>${categories[selectedCategory]}</p>
                 `;
             }
@@ -118,5 +120,3 @@ fetchAndSortAuctions()
     .catch(err => {
         console.error(err);
     });
-
-gui.newInventory("invContainer", 6, "ah", "Auction House");
