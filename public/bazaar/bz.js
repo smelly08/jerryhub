@@ -112,12 +112,11 @@ function updateBazaarData(bazaarData, updated) {
     const itemList = [];
 
     for (const item in bazaarData) {
+        let buyPrice = 0
+        let sellPrice = 0;
         if (bazaarData[item].sell_summary.length > 0) {
-            const buyPrice = Math.round(bazaarData[item].quick_status.buyPrice * 10) / 10;
-            const sellPrice = Math.round(bazaarData[item].sell_summary[0].pricePerUnit * 10) / 10;
-        } else {
-            const sellPrice = 0;
-            const buyPrice = 0;
+            buyPrice = Math.round(bazaarData[item].quick_status.buyPrice * 10) / 10;
+            sellPrice = Math.round(bazaarData[item].sell_summary[0].pricePerUnit * 10) / 10;
         }
 
         console.log(bazaarData[item].sell_summary[0]);
