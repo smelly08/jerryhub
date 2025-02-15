@@ -3,7 +3,7 @@ let slotitems = {};
 let guis = [];
 
 addEventListener("load", (event) => {
-    const tooldipDiv = document.createElement("div");
+    const tooltipDiv = document.createElement("div");
     tooltipDiv.innerHTML = `
     <div id="body">
         <div id="tooltipContainer">
