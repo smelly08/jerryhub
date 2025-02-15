@@ -114,6 +114,7 @@ function updateBazaarData(bazaarData, updated) {
         console.log(bazaarData[item].sell_summary[0]);
         
         const margin = (buyPrice * 0.9875) - sellPrice;
+        const marginPercent = 100 * (1 - ((buyPrice * 0.9875) - sellPrice));
 
         // Mockup of buyMovingWeek and sellMovingWeek for the demonstration
         const buyMovingWeek = bazaarData[item].quick_status.buyMovingWeek || 0; 
@@ -130,6 +131,7 @@ function updateBazaarData(bazaarData, updated) {
             buyPrice,
             sellPrice,
             margin,
+            marginPercent,
             instaBuy,
             instaSell,
             hourlyProfit
@@ -155,7 +157,7 @@ function displayItems(items) {
                 <strong>${item.name}</strong><br>
                 <p>Buy order: <span class="darkpurple">${item.sellPrice.toLocaleString()}</span><br>
                 Sell order: <span class="darkpurple">${item.buyPrice.toLocaleString()}</span><br>
-                Margin: <span class="darkgreen">${item.margin.toLocaleString()}</span><br>
+                Margin: <span class="darkgreen">${item.margin.toLocaleString()} (${item.marginPercent.toLocaleString()})</span><br>
                 1h instabuys: <span class="blue">${item.instaBuy.toLocaleString()}</span><br>
                 1h instasells: <span class="blue">${item.instaSell.toLocaleString()}</span><br>
                 <p>Coins per Hour: <span class="darkgreen">${item.hourlyProfit.toLocaleString()}</span><br>
