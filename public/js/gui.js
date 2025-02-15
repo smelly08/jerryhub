@@ -157,11 +157,11 @@ addEventListener("load", (event) => {
         tooltip.style.top = `${event.clientY}px`;
     });
 });
-export function itemClicked(itemName) {
+function itemClicked(itemName) {
     alert(`You clicked on ${itemName}!`);
     // You can add any other functionality you want here, such as adding items to a selection or modifying inventory.
 }
-export function newInventory(parent, rows, id, name) {
+function newInventory(parent, rows, id, name) {
     console.log(`creating gui ${id} named ${name} with ${rows} rows under element ${parent}`);
     // Get the parent element by id
     const parentElement = document.getElementById(parent);
@@ -221,14 +221,14 @@ export function newInventory(parent, rows, id, name) {
     parentElement.appendChild(div);
 }
 
-export function setItemSlot(id, slot, item, lore) {
+function setItemSlot(id, slot, item, lore) {
     const blockID = `${id}${slot}`;
     document.getElementById(`slot${blockID}`).innerHTML = `${item}`;
     slotitems.blockID = item;
     lore.blockID = lore;
 }
 
-export function setClickFunction(id, slot, func) {
+function setClickFunction(id, slot, func) {
     //alert(`id: ${id}, slot: ${slot}`)
     if (guis[id] && func) {
         document.getElementById(`slot${id}${slot}`).setAttribute("onclick", func);
