@@ -67,15 +67,6 @@ style.innerHTML = `
     .grin-item span {
         display: inline-block;
     }
-    .green {
-        color: #00AA00;
-    }
-    .gold {
-        color: #FFAA00;
-    }
-    .blue {
-        color: #5555FF;
-    }
 `;
 document.head.appendChild(style);
 
