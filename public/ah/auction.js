@@ -96,26 +96,21 @@ async function fetchAndSortAuctions() {
 fetchAndSortAuctions()
     .then(categories => {
         const dropdown = document.getElementById('sel');
-
-        // Clear existing options except for the default one
-        dropdown.innerHTML = '
-            
-        ';
         
         dropdown.addEventListener('change', (event) => {
-        const selectedCategory = event.target.value;
-
-        // Clear previous stats
-        document.getElementById('ah').innerHTML = '';
-
-        if (selectedProfile) {
-            // Display the selected profile's information
-            document.getElementById('stats').innerHTML = `
-                <h2>${selectedCategory}</h2>
-                <p>${categories[selectedCategory]}</p>
-            `;
-        }
-    });
+            const selectedCategory = event.target.value;
+    
+            // Clear previous stats
+            document.getElementById('ah').innerHTML = '';
+    
+            if (selectedProfile) {
+                // Display the selected profile's information
+                document.getElementById('stats').innerHTML = `
+                    <h2>${selectedCategory}</h2>
+                    <p>${categories[selectedCategory]}</p>
+                `;
+            }
+        });
     })
     .catch(err => {
         console.error(err);
