@@ -162,6 +162,7 @@ function itemClicked(itemName) {
     // You can add any other functionality you want here, such as adding items to a selection or modifying inventory.
 }
 function newInventory(parent, rows, id, name) {
+    console.log(`creating gui ${id} named ${name} with ${rows} rows under element ${parent}`);
     // Get the parent element by id
     const parentElement = document.getElementById(parent);
     // Create the inventory
