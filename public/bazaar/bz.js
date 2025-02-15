@@ -23,6 +23,7 @@ style.innerHTML = `
     }
     .grid-item {
         padding: 10px;
+        margin: 10px;
         text-align: center;
         justify-content: center;
         transition: backgMath.round-color 0.3s;
