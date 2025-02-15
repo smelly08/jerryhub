@@ -30,6 +30,7 @@ const style = document.createElement('style');
 style.innerHTML = `
     .invContainer {
         display: flex;
+        margin: 20px;
     }
     .ah-container {
         display: flex;
