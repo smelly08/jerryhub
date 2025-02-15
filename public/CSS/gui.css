@@ -1,7 +1,5 @@
 html { height: 100%; }
 body {
-    display: flex;
-    position: fixed;
     height: 100vh;
     margin: 0;
 }
