@@ -14,6 +14,16 @@ addEventListener("load", (event) => {
 // Add CSS for bz page
 const style = document.createElement('style');
 style.innerHTML = `
+    #ah:empty {
+      animation: mymove 5s infinite;
+    }
+    
+    @keyframes mymove {
+          0%   {content: "Loading";}
+          25%  {content: "Loading.";}
+          75%  {content: "Loading..";}
+          100%  {content: "Loading...";}
+    }
 `;
 document.head.appendChild(style);
 
