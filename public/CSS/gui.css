@@ -1,0 +1,134 @@
+html { height: 100%; }
+body {
+    font-family: Roboto;
+    display: flex;
+    position: fixed;
+    height: 100vh;
+    margin: 0;
+}
+#body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+@font-face {
+    font-family: "main";
+    src:url("./font/MinecraftRegular-Bmg3.otf");
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.inventory-div {
+    font-size:12px;
+    color:#4C4C4C;
+    font-family: "main";
+    background-color:#C6C6C6;
+    padding: 7px;
+    padding-top: 1px;
+    box-shadow:
+        /* Right & bottom */
+        4px 0 #555,
+        6px 0 black,
+        0 4px #555,
+        0 6px black,
+        /* Left & top */
+        -4px 0 white,
+        -6px 0 black,
+        0 -4px white,
+        0 -6px black,
+        /* Corner right bottom */
+        4px 2px #555,
+        2px 4px #555,
+        2px 6px black,
+        6px 2px black,
+        4px 4px black,
+        /* Corner top right */
+        2px -2px #C6C6C6,
+        4px -2px black,
+        2px -4px black,
+        /* Corner top left */
+        -4px -2px white,
+        -2px -4px white,
+        -2px -6px black,
+        -6px -2px black,
+        -4px -4px black,
+        /* Corner bottom left */
+        -2px 2px #C6C6C6,
+        -4px 2px black,
+        -2px 4px black;
+}
+.inventory-title {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+}
+
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inventory-table th, 
+.inventory-table td {
+    text-align: center;
+    cursor: pointer;
+}
+.inventory-slot {
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    border-left: 2px inset #333333;
+    border-top: 2px inset #333333;
+    background-color:#888;
+    width: 46px;
+    height: 46px;
+}
+.inventory-slot:hover {
+    background-color: #e0e0e0;
+}
+
+#tooltipContainer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+}
+
+#tooltip {
+    font-family: 'main';
+    color: white;
+    position: absolute;
+    min-height: 1em;
+    padding: 7px;
+    display: none;
+    background-color: rgba(22,8,23,255);
+    box-shadow:
+        /* Right & bottom */
+        2px 0 #210454,
+        4px 0 black,
+        0 2px #210454,
+        0 4px black,
+        /* Left & top */
+        -2px 0 #210454,
+        -4px 0 black,
+        0 -2px #210454,
+        0 -4px black,
+        /* Corner right bottom */
+        2px 2px black,
+        /* Corner top right */
+        2px -2px black,
+        /* Corner top left */
+        -2px -2px black,
+        /* Corner bottom left */
+        -2px 2px black;
+}
