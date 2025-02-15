@@ -144,6 +144,18 @@ addEventListener("load", (event) => {
         }
     `;
     document.head.appendChild(style);
+
+    
+    
+    const tooltip = document.getElementById('tooltip');
+    const tooltipContainer = document.getElementById('tooltipContainer');
+    
+    // Event listener for mouse movement
+    document.addEventListener('mousemove', (event) => {
+        // Update the tooltip's position based on the mouse cursor
+        tooltip.style.left = `${event.clientX}px`;
+        tooltip.style.top = `${event.clientY}px`;
+    });
 });
 function itemClicked(itemName) {
     alert(`You clicked on ${itemName}!`);
@@ -221,13 +233,3 @@ function setClickFunction(id, slot, func) {
         document.getElementById(`slot${id}${slot}`).setAttribute("onclick", func);
     }
 }
-
-const tooltip = document.getElementById('tooltip');
-const tooltipContainer = document.getElementById('tooltipContainer');
-
-// Event listener for mouse movement
-document.addEventListener('mousemove', (event) => {
-    // Update the tooltip's position based on the mouse cursor
-    tooltip.style.left = `${event.clientX}px`;
-    tooltip.style.top = `${event.clientY}px`;
-});
