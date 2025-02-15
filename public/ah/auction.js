@@ -39,7 +39,6 @@ style.innerHTML = `
         display: flex;
         justify-content: center;
         align-items: center;
-        position: fixed;
     }
 `;
 document.head.appendChild(style);
