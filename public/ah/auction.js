@@ -13,7 +13,9 @@ addEventListener("load", (event) => {
             <option value="misc">Misc</option>
         </select>
         <div class="ah-container">
-            <div id="invContainer"></div>
+            <div id="body">
+                <div id="invContainer"></div>
+            </div>
             <div id="ah"></div>
         </div>
     `;
