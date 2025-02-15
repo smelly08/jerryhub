@@ -14,8 +14,9 @@ addEventListener("load", (event) => {
             <option value="blocks">Blocks</option>
             <option value="misc">Misc</option>
         </select>
-        <div id="ah" class="grid-container">
+        <div class="ah-container">
             <div id="invContainer"></div>
+            <div id="ah"></div>
         </div>
     `;
 
