@@ -2,7 +2,7 @@ let lore = {};
 let slotitems = {};
 let guis = [];
 
-addEventListener("load", function () {
+addEventListener("load", (event) => {
     const tooltipContainer = document.createElement("div");
     tooltipContainer.innerHTML = `
     <div id="body">
