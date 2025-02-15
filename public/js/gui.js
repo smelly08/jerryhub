@@ -5,24 +5,20 @@ let guis = [];
 addEventListener("load", function () {
     const tooltipContainer = document.createElement("div");
     tooltipContainer.innerHTML = `
-    <div id="tooltipContainer">
-        <div id="tooltip"></div>
+    <div id="body">
+        <div id="tooltipContainer">
+            <div id="tooltip"></div>
+        </div>
     </div>
     `;
     document.body.appendChild(tooltipContainer);
     const style = document.createElement("style");
     style.innerHTML = `
         html { height: 100%; }
-        body {
-            font-family: Roboto;
-            display: flex;
-            position: fixed;
-            height: 100vh;
-            margin: 0;
-        }
         #body {
             background-color: #f0f0f0;
             display: flex;
+            margin: 0;
             justify-content: center;
             align-items: center;
             position: fixed;
