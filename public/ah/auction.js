@@ -105,7 +105,7 @@ fetchAndSortAuctions()
     
             if (selectedCategory) {
                 // Display the selected profile's information
-                document.getElementById('stats').innerHTML = `
+                document.getElementById('ah').innerHTML = `
                     <h2>${selectedCategory}</h2>
                     <p>${categories[selectedCategory]}</p>
                 `;
