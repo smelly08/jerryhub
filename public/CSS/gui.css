@@ -7,9 +7,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
 }
-
+.guiContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .container {
     background-color: #fff;
     padding: 20px;
