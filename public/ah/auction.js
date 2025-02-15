@@ -4,7 +4,14 @@ addEventListener("load", (event) => {
         <p id="lastUpdated"></p>
         <input type="text" id="username" placeholder="Search for an item">
         <button id="fetch-btn" onclick="fetchBazaarData()">Refresh</button>
-        <select id="sel"></select>
+        <select id="sel">
+            <option value="weapon">Weapons</option>
+            <option value="armor">Armor</option>
+            <option value="accessories">Accessories</option>
+            <option value="consumables">Consumables</option>
+            <option value="blocks">Blocks</option>
+            <option value="misc">Misc</option>
+        </select>
         <div id="ah" class="grid-container"></div>
     `;
 
@@ -66,6 +73,7 @@ async function fetchAndSortAuctions() {
         armor: [],
         accessories: [],
         consumables: [],
+        blocks: [],
         misc: []
     };
 
@@ -90,7 +98,9 @@ fetchAndSortAuctions()
         const dropdown = document.getElementById('sel');
 
         // Clear existing options except for the default one
-        dropdown.innerHTML = '<option value="accessories">Accessories</option>';
+        dropdown.innerHTML = '
+            
+        ';
         
         dropdown.addEventListener('change', (event) => {
         const selectedCategory = event.target.value;
