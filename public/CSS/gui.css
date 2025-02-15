@@ -1,6 +1,5 @@
 html { height: 100%; }
 body {
-    font-family: Roboto;
     display: flex;
     position: fixed;
     height: 100vh;
@@ -15,10 +14,6 @@ body {
     width: 100vw;
     height: 100vh;
 }
-@font-face {
-    font-family: "main";
-    src:url("./font/MinecraftRegular-Bmg3.otf");
-}
 
 .container {
     background-color: #fff;
@@ -29,7 +24,6 @@ body {
 .inventory-div {
     font-size:12px;
     color:#4C4C4C;
-    font-family: "main";
     background-color:#C6C6C6;
     padding: 7px;
     padding-top: 1px;
