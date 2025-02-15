@@ -30,7 +30,7 @@ const style = document.createElement('style');
 style.innerHTML = `
     .invContainer {
         margin: 20px;
-        padding: 20px;
+        padding: 100px;
     }
     .ah-container {
         display: flex;
