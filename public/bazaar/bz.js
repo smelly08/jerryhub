@@ -157,7 +157,7 @@ function displayItems(items) {
                 <strong>${item.name}</strong><br>
                 <p>Buy order: <span class="red">${item.sellPrice.toLocaleString()}</span><br>
                 Sell order: <span class="red">${item.buyPrice.toLocaleString()}</span><br>
-                Margin: <span class="purple">${item.margin.toLocaleString()}</span> (<span class="darkaqua">${item.marginPercent.toLocaleString()}%)</span><br>
+                Margin: <span class="purple">${item.margin.toLocaleString()}</span> (<span class="darkaqua">${item.marginPercent.toLocaleString()}%</span>)<br>
                 1h instabuys: <span class="blue">${item.instaBuy.toLocaleString()}</span><br>
                 1h instasells: <span class="blue">${item.instaSell.toLocaleString()}</span><br>
                 <p>Coins per Hour: <span class="darkgreen">${item.hourlyProfit.toLocaleString()}</span><br>
