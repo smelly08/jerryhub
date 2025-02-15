@@ -1,5 +1,3 @@
-import * as gui from "/public/js/gui.js";
-
 addEventListener("load", (event) => {
     document.getElementById("main").innerHTML = `
         <h1>Auction House</h1>
