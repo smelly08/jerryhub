@@ -34,7 +34,6 @@ style.innerHTML = `
     .ah-container {
         display: flex;
         justify-content: center;
-        align-items: center;
     }
     #body {
         display: flex;
