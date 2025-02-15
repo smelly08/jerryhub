@@ -31,6 +31,9 @@ style.innerHTML = `
     .invContainer {
         display: flex;
     }
+    .ah-container {
+        display: flex;
+    }
     #body {
         display: flex;
         justify-content: center;
