@@ -112,7 +112,8 @@ fetchAndSortAuctions()
                     <div id="invContainer"></div>
                     <p>${categories[selectedCategory]}</p>
                 `;
-                gui.newInventory("invContainer", 6, "ah", "Auction House")
+                eval(gui);
+                newInventory("invContainer", 6, "ah", "Auction House")
             }
         });
     })
