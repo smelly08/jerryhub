@@ -113,7 +113,7 @@ function updateBazaarData(bazaarData, updated) {
 
         console.log(bazaarData[item].sell_summary[0]);
         
-        const margin = buyPrice - sellPrice;
+        const margin = (buyPrice * 0.9875) - sellPrice;
 
         // Mockup of buyMovingWeek and sellMovingWeek for the demonstration
         const buyMovingWeek = bazaarData[item].quick_status.buyMovingWeek || 0; 
@@ -122,7 +122,7 @@ function updateBazaarData(bazaarData, updated) {
         // Calculate one-hour insta-sells and insta-buys
         const instaBuy = Math.round(buyMovingWeek / 168);
         const instaSell = Math.round(sellMovingWeek / 168);
-        const hourlyProfit = Math.round(Math.min(instaBuy, instaSell) * (margin - 0.125 * buyPrice) * 10) / 10;
+        const hourlyProfit = Math.round(Math.min(instaBuy, instaSell) * margin * 10) / 10;
 
         // Push item details into the array
         itemList.push({
