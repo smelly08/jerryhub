@@ -29,6 +29,15 @@ style.innerHTML = `
     .invContainer {
         display: flex;
     }
+    #body {
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+    }
 `;
 document.head.appendChild(style);
 
