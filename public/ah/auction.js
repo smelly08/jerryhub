@@ -27,7 +27,7 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
-async function fetchAuctions() {
+async function fetchAndSortAuctions() {
     const baseUrl = 'https://api.hypixel.net/skyblock/auctions?page=';
     let allAuctions = [];
     let totalPages = 0;
@@ -38,7 +38,7 @@ async function fetchAuctions() {
         throw new Error('Failed to fetch data from the API');
     }
     const firstPageData = await firstPageResponse.json();
-    
+
     // Check if the data received is valid and get total pages
     if (firstPageData.success && firstPageData.auctions) {
         totalPages = firstPageData.totalPages;
@@ -59,13 +59,34 @@ async function fetchAuctions() {
         }
     }
 
-    return allAuctions;
+    // Sort auctions into categories
+    const categories = {
+        weapons: [],
+        armor: [],
+        accessories: [],
+        blocks: [],
+        tools: []
+    };
+
+    allAuctions.forEach(auction => {
+        const category = auction.category;
+        if (categories[category]) {
+            categories[category].push(auction);
+        } else {
+            console.warn(`Unknown category: ${category}`);
+        }
+    });
+
+    // Log the sorted categories
+    console.log(`Fetched a total of ${allAuctions.length} auctions.`);
+    console.log('Sorted categories: ', categories);
+
+    return categories;
 }
 
-fetchAuctions()
-    .then(auctions => {
-        document.getElementById("ah").innerText = `Fetched a total of ${auctions.length} auctions.`;
-        // Do something with the auctions data
+fetchAndSortAuctions()
+    .then(categories => {
+        // You can do something with the sorted categories
     })
     .catch(err => {
         console.error(err);
