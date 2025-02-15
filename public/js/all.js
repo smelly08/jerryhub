@@ -9,7 +9,8 @@ addEventListener("load", (event) => {
     const style = document.createElement("style");
     style.innerHTML = `
         #homeButton {
-            position: absolute;
+            position: fixed;
+            cursor: pointer;
             top: 0;
             left: 12px;
             z-index: 9999;
