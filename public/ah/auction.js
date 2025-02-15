@@ -29,6 +29,7 @@ addEventListener("load", (event) => {
 const style = document.createElement('style');
 style.innerHTML = `
     .ah-container {
+        display: inline-block;
         justify-content: center;
     }
 `;
