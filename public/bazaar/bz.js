@@ -113,8 +113,8 @@ function updateBazaarData(bazaarData, updated) {
 
         console.log(bazaarData[item].sell_summary[0]);
         
-        const margin = (buyPrice * 0.9875) - sellPrice;
-        const marginPercent = 100 * (1 - ((buyPrice * 0.9875) - sellPrice));
+        const margin = Math.round(((buyPrice * 0.9875) - sellPrice) * 10) / 10;
+        const marginPercent = Math.round(1000 * (1 - ((buyPrice * 0.9875) - sellPrice))) / 10;
 
         // Mockup of buyMovingWeek and sellMovingWeek for the demonstration
         const buyMovingWeek = bazaarData[item].quick_status.buyMovingWeek || 0; 
