@@ -1,5 +1,5 @@
-import * as texturedata from `/public/js/textures.json`;
-const {textures} = texturedata;
+import * as texturedata from `https://raw.githubusercontent.com/smelly08/jerryhub/refs/heads/main/public/js/textures.json`;
+const {textures} = JSON.parse(texturedata);
 console.log(textures);
 
 addEventListener("load", (event) => {
