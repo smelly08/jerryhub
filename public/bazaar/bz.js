@@ -12,22 +12,29 @@ addEventListener("load", (event) => {
     document.getElementById('username').addEventListener('input', filterItems);
 });
 
-const getJSON = async url => {
-    const response = await fetch(url);
-    if(!response.ok) // check if response worked (no 404 errors etc...)
-        throw new Error(response.statusText);
-    
-    const data = response.json(); // get JSON from the response
-    return data; // returns a promise, which resolves to this data value
+async function fetchTextures() {
+    const url = 'https://raw.githubusercontent.com/smelly08/jerryhub/refs/heads/main/public/js/textures.json';
+    let textures = {};
+
+    try {
+        const response = await fetch(url);
+        // Check if the response is okay (status code in the range 200-299)
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        // Parse the JSON and assign it to the textures object
+        textures = await response.json();
+        console.log(textures); // Display the fetched textures object in the console
+    } catch (error) {
+        console.error('Error fetching textures:', error);
+    }
+
+    return textures;
 }
 
-console.log("Fetching data...");
-getJSON("https://raw.githubusercontent.com/smelly08/jerryhub/refs/heads/main/public/js/textures.json").then(data => {
-    console.log(data);
-    textures = data;
-}).catch(error => {
-    console.error(error);
-});
+// Call the function
+fetchTextures();
 
 // Add CSS for bz page
 const style = document.createElement('style');
