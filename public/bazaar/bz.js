@@ -1,6 +1,4 @@
-import * as texturedata from `https://raw.githubusercontent.com/smelly08/jerryhub/refs/heads/main/public/js/textures.json`;
-const {textures} = JSON.parse(texturedata);
-console.log(textures);
+let textures = {};
 
 addEventListener("load", (event) => {
     document.getElementById("main").innerHTML = `
@@ -10,11 +8,19 @@ addEventListener("load", (event) => {
         <button id="fetch-btn" onclick="fetchBazaarData()">Reload prices (automatically updates every minute)</button>
         <div id="bzdata" class="grid-container"></div>
     `;
-
     // Add search input event listener
     document.getElementById('username').addEventListener('input', filterItems);
 });
 
+async function fetchTextures() {
+    try {
+        const txresponse = await fetch('https://api.hypixel.net/skyblock/bazaar');
+        const txdata = await JSON.parse(txresponse);
+        textures = txdata.textures
+    } catch (error) {
+        console.log("error fetching textures");
+    }
+}
 // Add CSS for bz page
 const style = document.createElement('style');
 style.innerHTML = `
@@ -193,5 +199,6 @@ function filterItems() {
     }
 }
 // Fetch data immediately and set interval to fetch every minute
+fetchTextures();
 fetchBazaarData();
 setInterval(fetchBazaarData, 60000);
