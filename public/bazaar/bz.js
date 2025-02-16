@@ -135,6 +135,8 @@ function updateBazaarData(bazaarData, updated) {
         const instaSell = Math.round(sellMovingWeek / 168);
         const hourlyProfit = Math.round(Math.min(instaBuy, instaSell) * margin * 10) / 10;
 
+        const itemTexture = textures.item.toLowerCase();
+
         // Push item details into the array
         itemList.push({
             name: item,
@@ -144,7 +146,8 @@ function updateBazaarData(bazaarData, updated) {
             marginPercent,
             instaBuy,
             instaSell,
-            hourlyProfit
+            hourlyProfit,
+            itemTexture
         });
     }
 
@@ -165,7 +168,7 @@ function displayItems(items) {
         displayData += `
             <div class="grid-item">
                 <div class="inventory-item">
-                    <img src="https://www.mc-heads.net/head/${textures[item.name.toLowerCase()]}" width="40px" height="40px" />
+                    <img src="https://www.mc-heads.net/head/${itemTexture}" width="40px" height="40px" />
                 </div>
                 <strong>${item.name}</strong><br>
                 <div class="tooltipDiv">
