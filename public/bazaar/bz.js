@@ -1,3 +1,7 @@
+import * as texturedata from `/public/js/textures.json`;
+const {textures} = texturedata;
+console.log(textures);
+
 addEventListener("load", (event) => {
     document.getElementById("main").innerHTML = `
         <h1>Bazaar</h1>
