@@ -153,7 +153,7 @@ function displayItems(items) {
     items.forEach(item => {
         displayData += `
             <div class="grid-item">
-                <div class="inventory-item">
+                <div class="inventory-slot">
                     <img src="https://www.mc-heads.net/head/b6e522d918252149e6ede2edf3fe0f2c2c58fee6ac11cb88c617207218ae4595" width="40px" height="40px" />
                 </div>
                 <strong>${item.name}</strong><br>
