@@ -10,31 +10,6 @@ addEventListener("load", (event) => {
     document.getElementById('username').addEventListener('input', filterItems);
 });
 
-async function fetchTextures() {
-    const txurl = 'https://raw.githubusercontent.com/smelly08/jerryhub/refs/heads/main/public/js/textures.json';
-    let textures = {};
-
-    try {
-        const txresponse = await fetch(txurl);
-        // Check if the response is okay (status code in the range 200-299)
-        if (!txresponse.ok) {
-            throw new Error(`HTTP error! Status: ${txresponse.status}`);
-        }
-        
-        // Parse the JSON and assign it to the textures object
-        const txdata = await txresponse.json();
-        textures = txdata.textures;
-        console.log(textures); // Display the fetched textures object in the console
-    } catch (error) {
-        console.error('Error fetching textures:', error);
-    }
-
-    return textures;
-}
-
-// Call the function
-fetchTextures();
-
 // Add CSS for bz page
 const style = document.createElement('style');
 style.innerHTML = `
@@ -149,8 +124,6 @@ function updateBazaarData(bazaarData, updated) {
         const instaSell = Math.round(sellMovingWeek / 168);
         const hourlyProfit = Math.round(Math.min(instaBuy, instaSell) * margin * 10) / 10;
 
-        const itemTexture = textures.item;
-
         // Push item details into the array
         itemList.push({
             name: item,
@@ -160,8 +133,7 @@ function updateBazaarData(bazaarData, updated) {
             marginPercent,
             instaBuy,
             instaSell,
-            hourlyProfit,
-            itemTexture
+            hourlyProfit
         });
     }
 
@@ -182,7 +154,7 @@ function displayItems(items) {
         displayData += `
             <div class="grid-item">
                 <div class="inventory-item">
-                    <img src="https://www.mc-heads.net/head/${item.itemTexture}" width="40px" height="40px" />
+                    <img src="https://www.mc-heads.net/head/b6e522d918252149e6ede2edf3fe0f2c2c58fee6ac11cb88c617207218ae4595" width="40px" height="40px" />
                 </div>
                 <strong>${item.name}</strong><br>
                 <div class="tooltipDiv">
