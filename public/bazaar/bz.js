@@ -1,5 +1,3 @@
-let textures = {};
-
 addEventListener("load", (event) => {
     document.getElementById("main").innerHTML = `
         <h1>Bazaar</h1>
@@ -13,18 +11,19 @@ addEventListener("load", (event) => {
 });
 
 async function fetchTextures() {
-    const url = 'https://raw.githubusercontent.com/smelly08/jerryhub/refs/heads/main/public/js/textures.json';
+    const txurl = 'https://raw.githubusercontent.com/smelly08/jerryhub/refs/heads/main/public/js/textures.json';
     let textures = {};
 
     try {
-        const response = await fetch(url);
+        const txresponse = await fetch(txurl);
         // Check if the response is okay (status code in the range 200-299)
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+        if (!txresponse.ok) {
+            throw new Error(`HTTP error! Status: ${txresponse.status}`);
         }
         
         // Parse the JSON and assign it to the textures object
-        textures = await response.json();
+        const txdata = await txresponse.json();
+        textures = txdata.textures;
         console.log(textures); // Display the fetched textures object in the console
     } catch (error) {
         console.error('Error fetching textures:', error);
