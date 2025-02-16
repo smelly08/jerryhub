@@ -14,7 +14,7 @@ addEventListener("load", (event) => {
 
 async function fetchTextures() {
     try {
-        const txresponse = await fetch('https://api.hypixel.net/skyblock/bazaar');
+        const txresponse = await fetch('https://raw.githubusercontent.com/smelly08/jerryhub/refs/heads/main/public/js/textures.json');
         const txdata = await JSON.parse(txresponse);
         textures = txdata.textures
     } catch (error) {
@@ -135,7 +135,7 @@ function updateBazaarData(bazaarData, updated) {
         const instaSell = Math.round(sellMovingWeek / 168);
         const hourlyProfit = Math.round(Math.min(instaBuy, instaSell) * margin * 10) / 10;
 
-        const itemTexture = textures.item.toLowerCase();
+        const itemTexture = textures.item;
 
         // Push item details into the array
         itemList.push({
