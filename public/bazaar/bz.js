@@ -154,6 +154,9 @@ function displayItems(items) {
     items.forEach(item => {
         displayData += `
             <div class="grid-item">
+                <div class="inventory-item">
+                    <img src="https://www.mc-heads.net/head/${textures[item.name.toLowerCase()]}" width="40px" height="40px" />
+                </div>
                 <strong>${item.name}</strong><br>
                 <div class="tooltipDiv">
                     <p>Buy order: <span class="gold">${item.sellPrice.toLocaleString()}</span><br>
