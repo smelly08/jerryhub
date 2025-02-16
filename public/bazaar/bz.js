@@ -168,7 +168,7 @@ function displayItems(items) {
         displayData += `
             <div class="grid-item">
                 <div class="inventory-item">
-                    <img src="https://www.mc-heads.net/head/${itemTexture}" width="40px" height="40px" />
+                    <img src="https://www.mc-heads.net/head/${item.itemTexture}" width="40px" height="40px" />
                 </div>
                 <strong>${item.name}</strong><br>
                 <div class="tooltipDiv">
