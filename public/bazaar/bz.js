@@ -126,13 +126,11 @@ function updateBazaarData(bazaarData, updated) {
 
         let inflated = `<br>`;
         if (marginPercent >= 100) {
-            const inflated = `<br><span class="red">[!] Likely inflated [!]</span><br>`;
+            inflated = `<br><span class="red">[!] Likely inflated [!]</span><br>`;
         }
-        
+        let color = "red"
         if (hourlyProfit >= 0) {
-            const color = "red";
-        } else {
-            const color = "red";
+            color = "green";
         }
         
         // Push item details into the array
@@ -145,8 +143,8 @@ function updateBazaarData(bazaarData, updated) {
             instaBuy,
             instaSell,
             hourlyProfit,
-            inflated,
-            color
+            infl: inflated,
+            clr: color
         });
     }
 
@@ -175,8 +173,8 @@ function displayItems(items) {
                     Sell order: <span class="gold">${item.buyPrice.toLocaleString()}</span><br>
                     Margin: <span class="purple">${item.margin.toLocaleString()}</span> (<span class="aqua">${item.marginPercent.toLocaleString()}%</span>)<br>
                     1h instabuys: <span class="blue">${item.instaBuy.toLocaleString()}</span><br>
-                    1h instasells: <span class="blue">${item.instaSell.toLocaleString()}</span>${item.inflated}
-                    <p>Coins per Hour: <span class="${item.color}">${item.hourlyProfit.toLocaleString()}</span><br>
+                    1h instasells: <span class="blue">${item.instaSell.toLocaleString()}</span><br>${item.infl}
+                    <p>Coins per Hour: <span class="${item.clr}">${item.hourlyProfit.toLocaleString()}</span><br>
                 </div>
             </div>
         `;
