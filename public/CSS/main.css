@@ -143,7 +143,7 @@ button:hover {
     min-height: 1em;
     padding: 7px;
     background-color: rgba(22,8,23,255);
-    box-sizing: border-box;
+    margin: 12px;
     box-shadow:
         /* Right & bottom */
         2px 0 #210454,
