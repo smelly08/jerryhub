@@ -137,3 +137,29 @@ button:hover {
 .white {
     color: 	#FFFFFF;
 }
+
+.tooltipDiv {
+    color: white;
+    min-height: 1em;
+    padding: 7px;
+    background-color: rgba(22,8,23,255);
+    box-shadow:
+        /* Right & bottom */
+        2px 0 #210454,
+        4px 0 black,
+        0 2px #210454,
+        0 4px black,
+        /* Left & top */
+        -2px 0 #210454,
+        -4px 0 black,
+        0 -2px #210454,
+        0 -4px black,
+        /* Corner right bottom */
+        2px 2px black,
+        /* Corner top right */
+        2px -2px black,
+        /* Corner top left */
+        -2px -2px black,
+        /* Corner bottom left */
+        -2px 2px black;
+}
