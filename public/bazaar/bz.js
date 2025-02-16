@@ -12,27 +12,23 @@ addEventListener("load", (event) => {
     document.getElementById('username').addEventListener('input', filterItems);
 });
 
-function getJSONP(url, success) {
-
-    var ud = '_' + +new Date,
-        script = document.createElement('script'),
-        head = document.getElementsByTagName('head')[0] 
-               || document.documentElement;
-
-    window[ud] = function(data) {
-        head.removeChild(script);
-        success && success(data);
-    };
-
-    script.src = url.replace('callback=?', 'callback=' + ud);
-    head.appendChild(script);
-
+const getJSON = async url => {
+    const response = await fetch(url);
+    if(!response.ok) // check if response worked (no 404 errors etc...)
+        throw new Error(response.statusText);
+    
+    const data = response.json(); // get JSON from the response
+    return data; // returns a promise, which resolves to this data value
 }
 
-getJSONP('https://raw.githubusercontent.com/smelly08/jerryhub/refs/heads/main/public/js/textures.json', function(data){
+console.log("Fetching data...");
+getJSON("https://raw.githubusercontent.com/smelly08/jerryhub/refs/heads/main/public/js/textures.json").then(data => {
     console.log(data);
-    textures = data.textures;
-});  
+    textures = data;
+}).catch(error => {
+    console.error(error);
+});
+
 // Add CSS for bz page
 const style = document.createElement('style');
 style.innerHTML = `
