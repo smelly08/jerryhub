@@ -12,15 +12,27 @@ addEventListener("load", (event) => {
     document.getElementById('username').addEventListener('input', filterItems);
 });
 
-async function fetchTextures() {
-    try {
-        const txresponse = await fetch('https://raw.githubusercontent.com/smelly08/jerryhub/refs/heads/main/public/js/textures.json');
-        const txdata = await JSON.parse(txresponse);
-        textures = txdata.textures
-    } catch (error) {
-        console.log("error fetching textures");
-    }
+function getJSONP(url, success) {
+
+    var ud = '_' + +new Date,
+        script = document.createElement('script'),
+        head = document.getElementsByTagName('head')[0] 
+               || document.documentElement;
+
+    window[ud] = function(data) {
+        head.removeChild(script);
+        success && success(data);
+    };
+
+    script.src = url.replace('callback=?', 'callback=' + ud);
+    head.appendChild(script);
+
 }
+
+getJSONP('https://raw.githubusercontent.com/smelly08/jerryhub/refs/heads/main/public/js/textures.json', function(data){
+    console.log(data);
+    textures = data.textures;
+});  
 // Add CSS for bz page
 const style = document.createElement('style');
 style.innerHTML = `
