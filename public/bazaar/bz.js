@@ -24,7 +24,7 @@ style.innerHTML = `
         padding: 10px;
         margin: 10px;
         text-align: center;
-        justify-content: center;
+        place-items: center;
         transition: backgMath.round-color 0.3s;
         background-color: #C6C6C6;
         color: #555555;
