@@ -124,7 +124,8 @@ function updateBazaarData(bazaarData, updated) {
         const instaSell = Math.round(sellMovingWeek / 168);
         const hourlyProfit = Math.round(Math.min(instaBuy, instaSell) * margin * 10) / 10;
 
-        const flipScore = Math.ceil(10 * Math.log((hourlyProfit * (margin / ((sellPrice / instaBuy) + (buyPrice / instaSell)))) / 1000)) / 10;
+        let scorefactor1 = margin / ((buyPrice / instaBuy) + (sellPrice / instaSell))
+        const flipScore = Math.ceil(Math.log((hourlyProfit * scorefactor1 * 0.001)));
 
         let inflated = `<br>`;
         if (marginPercent >= 100) {
