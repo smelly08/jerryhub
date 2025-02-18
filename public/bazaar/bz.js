@@ -177,8 +177,8 @@ function displayItems(items) {
                     Sell order: <span class="gold">${item.buyPrice.toLocaleString()}</span><br>
                     Margin: <span class="purple">${item.margin.toLocaleString()}</span> (<span class="aqua">${item.marginPercent.toLocaleString()}%</span>)<br>
                     1h instabuys: <span class="blue">${item.instaBuy.toLocaleString()}</span><br>
-                    1h instasells: <span class="blue">${item.instaSell.toLocaleString()}</span><br>${item.infl}
-                    <p>Coins per Hour: <span class="${item.clr}">${item.hourlyProfit.toLocaleString()}</span><br>
+                    1h instasells: <span class="blue">${item.instaSell.toLocaleString()}</span>${item.infl}<br>
+                    Coins per Hour: <span class="${item.clr}">${item.hourlyProfit.toLocaleString()}</span>
                 </div>
             </div>
         `;
