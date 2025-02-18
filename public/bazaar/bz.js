@@ -124,6 +124,8 @@ function updateBazaarData(bazaarData, updated) {
         const instaSell = Math.round(sellMovingWeek / 168);
         const hourlyProfit = Math.round(Math.min(instaBuy, instaSell) * margin * 10) / 10;
 
+        const flipScore = Math.ceil(10 * Math.log((hourlyProfit * (margin / ((sellPrice / instaSell) + (buyPrice / instaBuy)))) / 1000)) / 10;
+
         let inflated = `<br>`;
         if (marginPercent >= 100) {
             inflated = `<br><span class="red">[!] Likely inflated [!]</span><br>`;
@@ -143,6 +145,7 @@ function updateBazaarData(bazaarData, updated) {
             instaBuy,
             instaSell,
             hourlyProfit,
+            flipScore,
             infl: inflated,
             clr: color
         });
@@ -169,7 +172,8 @@ function displayItems(items) {
                 </div>
                 <strong>${item.name}</strong><br>
                 <div class="tooltipDiv">
-                    <p>Buy order: <span class="gold">${item.sellPrice.toLocaleString()}</span><br>
+                    <p><span class="yellow">${flipScore}</span><br>
+                    Buy order: <span class="gold">${item.sellPrice.toLocaleString()}</span><br>
                     Sell order: <span class="gold">${item.buyPrice.toLocaleString()}</span><br>
                     Margin: <span class="purple">${item.margin.toLocaleString()}</span> (<span class="aqua">${item.marginPercent.toLocaleString()}%</span>)<br>
                     1h instabuys: <span class="blue">${item.instaBuy.toLocaleString()}</span><br>
