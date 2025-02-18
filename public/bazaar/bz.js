@@ -172,8 +172,8 @@ function displayItems(items) {
                 </div>
                 <strong>${item.name}</strong><br>
                 <div class="tooltipDiv">
-                    <p><span class="yellow">Score: ${item.flipScore}</span><br>
-                    Buy order: <span class="gold">${item.sellPrice.toLocaleString()}</span><br>
+                    <!-- <p><span class="yellow">Score: ${item.flipScore}</span><br>-->
+                    <p>Buy order: <span class="gold">${item.sellPrice.toLocaleString()}</span><br>
                     Sell order: <span class="gold">${item.buyPrice.toLocaleString()}</span><br>
                     Margin: <span class="purple">${item.margin.toLocaleString()}</span> (<span class="aqua">${item.marginPercent.toLocaleString()}%</span>)<br>
                     1h instabuys: <span class="blue">${item.instaBuy.toLocaleString()}</span><br>
