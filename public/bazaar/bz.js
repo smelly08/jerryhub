@@ -124,8 +124,7 @@ function updateBazaarData(bazaarData, updated) {
         const instaSell = Math.round(sellMovingWeek / 168);
         const hourlyProfit = Math.round(Math.min(instaBuy, instaSell) * margin * 10) / 10;
 
-        let scorefactor1 = ((buyPrice / instaBuy) + (sellPrice / instaSell));
-        const flipScore = Math.ceil(Math.log((hourlyProfit * (margin / scorefactor1) * 0.001)));
+        const flipScore = bzscore(sellPrice, buyPrice, instaBuy, instaSell);
 
         let inflated = `<br>`;
         if (marginPercent >= 100) {
@@ -202,6 +201,23 @@ function filterItems() {
     } else {
         displayItems(globalItemList);
     }
+}
+
+function bzScore(a, b, c, d) {
+    // Calculate 0.9875b - a
+    const term1 = 0.9875 * b - a;
+
+    // Calculate min(c, d)
+    const minCD = Math.min(c, d);
+
+    // Calculate b/c + a/d
+    const term2 = (b / c) + (a / d);
+
+    // Calculate the numerator
+    const numerator = (term1 * minCD) * (term1 / term2) / 1000;
+
+    // Calculate the logarithm and round up to the nearest integer
+    return Math.ceil(Math.log10(numerator));
 }
 // Fetch data immediately and set interval to fetch every minute
 fetchBazaarData();
