@@ -1,9 +1,10 @@
+var hideInflated = 0;
 addEventListener("load", (event) => {
     document.getElementById("main").innerHTML = `
         <h1>Bazaar</h1>
         <p id="lastUpdated"></p>
         <input type="text" id="username" placeholder="Search for an item">
-        <button id="fetch-btn" onclick="fetchBazaarData()">Reload prices (automatically updates every minute)</button>
+        <button id="fetch-btn" onclick="fetchBazaarData()">Refresh data</button>
         <div id="bzdata" class="grid-container"></div>
     `;
     // Add search input event listener
@@ -97,10 +98,12 @@ async function fetchBazaarData() {
 }
 
 let globalItemList = []; // Store the list of items globally
+let uninflatedItemList = [];
 
 function updateBazaarData(bazaarData, updated) {
     // Create an array to hold items and their metrics
     const itemList = [];
+    uninflatedItemList = [];
 
     for (const item in bazaarData) {
         let buyPrice = 0
@@ -149,8 +152,24 @@ function updateBazaarData(bazaarData, updated) {
             infl: inflated,
             clr: color
         });
-    }
 
+        if (!marginPercent >= 100) {
+            uninflatedItemList.push({
+                name: item,
+                buyPrice,
+                sellPrice,
+                margin,
+                marginPercent,
+                instaBuy,
+                instaSell,
+                hourlyProfit,
+                flipScore,
+                infl: inflated,
+                clr: color
+            });
+        }
+    }
+    
     globalItemList = itemList; // Store the item list globally
 
     // Sort the items based on hourly profit from highest to lowest
@@ -191,6 +210,10 @@ function displayItems(items) {
 
 // Function to filter items based on the search input
 function filterItems() {
+    let filterItemList = globalItemList;
+    if (hideInflated === 1) {
+        filterItemList = uninflatedItemList;
+    }
     const searchTerm = document.getElementById('username').value.toLowerCase().replace(/[\s_]/g, '');
     if (!globalItemList) {
         fetchBazaarData();
