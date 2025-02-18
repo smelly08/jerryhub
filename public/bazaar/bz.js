@@ -191,12 +191,12 @@ function displayItems(items) {
 
 // Function to filter items based on the search input
 function filterItems() {
-    const searchTerm = document.getElementById('username').value.toLowerCase().replace(/\s/g, '').replace(/_/g, '');
+    const searchTerm = document.getElementById('username').value.toLowerCase().replace(/[\s_]/g, '');
     if (!globalItemList) {
         fetchBazaarData();
     }
     if (searchTerm) {
-        const filteredItems = globalItemList.filter(item => item.name.toLowerCase().replace(/\s/g, '').replace(/_/g, '').includes(searchTerm));
+        const filteredItems = globalItemList.filter(item => item.name.toLowerCase().replace(/[\s_]/g, '').includes(searchTerm));
         displayItems(filteredItems); // Display filtered items
     } else {
         displayItems(globalItemList);
