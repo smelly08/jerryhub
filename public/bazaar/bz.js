@@ -1,4 +1,5 @@
 var hideInflated = 0;
+var sortMethod = "hourlyProfit";
 addEventListener("load", (event) => {
     document.getElementById("main").innerHTML = `
         <h1>Bazaar</h1>
@@ -226,6 +227,23 @@ function filterItems() {
     }
 }
 
+function sortItems(sortList, sortMethod) {
+    if (sortMethod === "hourlyProfit") {
+        return sortList.sort((a, b) => b.hourlyProfit - a.hourlyProfit);
+    } else if (sortMethod === "margin") {
+        return sortList.sort((a, b) => b.margin - a.margin);
+    } else if (sortMethod === "marginPercent") {
+        return sortList.sort((a, b) => b.marginPercent - a.marginPercent);
+    } else if (sortMethod === "instaBuy") {
+        return sortList.sort((a, b) => b.instaBuy - a.instaSell);
+    } else if (sortMethod === "instaSell") {
+        return sortList.sort((a, b) => b.instaSell - a.instaSel);
+    } else if (sortMethod === "buyPrice") {
+        return sortList.sort((a, b) => b.buyPrice - a.buyPrice);
+    } else if (sortMethod === "sellPrice") {
+        return sortList.sort((a, b) => b.sellPrice - a.sellPrice);
+    }
+}
 function bzScore(a, b, c, d) {
     // Calculate 0.9875b - a
     const term1 = 0.9875 * b - a;
