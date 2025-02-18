@@ -211,7 +211,7 @@ function bzScore(a, b, c, d) {
     const minCD = Math.min(c, d);
 
     // Calculate b/c + a/d
-    const term2 = (b / c) + (a / d);
+    const term2 = (a + b) / (c + d);
 
     // Calculate the numerator
     const numerator = (term1 * minCD) * (term1 / term2) / 1000;
