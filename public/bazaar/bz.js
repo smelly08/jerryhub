@@ -128,6 +128,7 @@ function displayItems(items) {
             </div>
             <strong>${item.name}</strong><br>
             <div class="tooltipDiv">
+                <p><span class="yellow">${item.flipScore}</p>
                 <p>Buy order: <span class="gold">${item.sellPrice.toLocaleString()}</span><br>
                 Sell order: <span class="gold">${item.buyPrice.toLocaleString()}</span><br>
                 Margin: <span class="purple">${item.margin.toLocaleString()}</span> (<span class="aqua">${item.marginPercent.toLocaleString()}%</span>)<br>
@@ -155,7 +156,7 @@ function bzScore(a, b, c, d) {
     const term2 = (a + b) / (c + d);
     const numerator = (term1 * minCD) * (term1 / term2) / 1000;
 
-    return Math.ceil(Math.log10(numerator));
+    return "★".repeat(Math.ceil(Math.log10(numerator)));
 }
 
 async function fetchTexturesData() {
