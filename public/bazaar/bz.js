@@ -1,5 +1,8 @@
 var hideInflated = 0;
 var sortMethod = "hourlyProfit";
+
+let textures = {};
+
 addEventListener("load", (event) => {
     document.getElementById("main").innerHTML = `
         <h1>Bazaar</h1>
@@ -185,12 +188,14 @@ function updateBazaarData(bazaarData, updated) {
 function displayItems(items) {
     let displayData = '<div class="grid-container">';
     items.forEach(item => {
+        let itemTexture = textures.item.name || "https://www.mc-heads.net/head/b6e522d918252149e6ede2edf3fe0f2c2c58fee6ac11cb88c617207218ae4595";
+        let itemName = textures.item.name || item.name;
         displayData += `
             <div class="grid-item">
                 <div class="inventory-slot">
-                    <img src="https://www.mc-heads.net/head/b6e522d918252149e6ede2edf3fe0f2c2c58fee6ac11cb88c617207218ae4595" width="32px" height="32px" />
+                    <img src="itemTexture" width="32px" height="32px" />
                 </div>
-                <strong>${item.name}</strong><br>
+                <strong>${itemName}</strong><br>
                 <div class="tooltipDiv">
                     <!-- <p><span class="yellow">Score: ${item.flipScore}</span><br>-->
                     <p>Buy order: <span class="gold">${item.sellPrice.toLocaleString()}</span><br>
@@ -260,6 +265,21 @@ function bzScore(a, b, c, d) {
     // Calculate the logarithm and round up to the nearest integer
     return Math.ceil(Math.log10(numerator));
 }
+
+async function fetchTexturesData() {
+    try {
+        const txresponse = await fetch('https://raw.githubusercontent.com/smelly08/jerryhub/refs/heads/main/public/js/textures.json');
+        const txdata = await txresponse.json();
+
+        textures = txdata;
+        console.log('Fetched Textures Data:', txdata);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+fetchTexturesData();
+
 // Fetch data immediately and set interval to fetch every minute
 fetchBazaarData();
 setInterval(fetchBazaarData, 60000);
