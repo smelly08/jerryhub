@@ -195,7 +195,7 @@ function displayItems(items) {
         displayData += `
             <div class="grid-item">
                 <div class="inventory-slot">
-                    <img src="itemTexture" width="32px" height="32px" />
+                    <img src="${itemTexture}" width="32px" height="32px" />
                 </div>
                 <strong>${itemName}</strong><br>
                 <div class="tooltipDiv">
