@@ -6,7 +6,7 @@ window.addEventListener("load", initialize);
 
 function initialize() {
     const mainContent = `
-        <h1>Bazaar</h1>
+        <h1>Bazaar Flipper</h1>
         <p id="lastUpdated"></p>
         <input type="text" id="username" placeholder="Search for an item">
         <button id="fetch-btn">Refresh data</button>
