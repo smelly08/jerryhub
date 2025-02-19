@@ -188,11 +188,8 @@ function updateBazaarData(bazaarData, updated) {
 function displayItems(items) {
     let displayData = '<div class="grid-container">';
     items.forEach(item => {
-        let tempname = item.name
-        let currentItemId = textures.tempname;
-        alert(JSON.stringify(currentItemId));
-        let itemTexture = currentItemId.texture || "https://www.mc-heads.net/head/b6e522d918252149e6ede2edf3fe0f2c2c58fee6ac11cb88c617207218ae4595";
-        let itemName = currentItemId.displayName || currentItemId;
+        let itemTexture = textures.[item.name].texture || "https://www.mc-heads.net/head/b6e522d918252149e6ede2edf3fe0f2c2c58fee6ac11cb88c617207218ae4595";
+        let itemName = textures.[item.name].displayName || item.name;
         displayData += `
             <div class="grid-item">
                 <div class="inventory-slot">
