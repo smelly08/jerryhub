@@ -154,7 +154,7 @@ function bzScore(a, b, c, d) {
     const term1 = 0.9875 * b - a;
     const minCD = Math.min(c, d);
     const term2 = (a + b) / (c + d);
-    let numerator = Math.ceil(Math.log10((term1 * minCD) * (term1 / term2) / 1000);
+    let numerator = Math.ceil(Math.log10((term1 * minCD) * (term1 / term2) / 1000));
     return numerator;
 }
 
