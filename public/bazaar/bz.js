@@ -128,17 +128,16 @@ function displayItems(items) {
             </div>
             <strong>${item.name}</strong><br>
             <div class="tooltipDiv">
-                <p><span class="yellow">${item.flipScore}</p>
                 <p>Buy order: <span class="gold">${item.sellPrice.toLocaleString()}</span><br>
                 Sell order: <span class="gold">${item.buyPrice.toLocaleString()}</span><br>
                 Margin: <span class="purple">${item.margin.toLocaleString()}</span> (<span class="aqua">${item.marginPercent.toLocaleString()}%</span>)<br>
                 1h instabuys: <span class="blue">${item.instaBuy.toLocaleString()}</span><br>
-                1h instasells: <span class="blue">${item.instaSell.toLocaleString()}</span><br>
+                1h instasells: <span class="blue">${item.instaSell.toLocaleString()}</span>${item.infl}<br>
                 Coins per Hour: <span class="${item.clr}">${item.hourlyProfit.toLocaleString()}</span>
             </div>
         </div>
     `).join('');
-    //${item.infl}
+    //<p><span class="yellow">${item.flipScore}</p>
     document.getElementById('bzdata').innerHTML = `<div class="grid-container">${displayData}</div>`;
 }
 
