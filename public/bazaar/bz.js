@@ -133,12 +133,12 @@ function displayItems(items) {
                 Sell order: <span class="gold">${item.buyPrice.toLocaleString()}</span><br>
                 Margin: <span class="purple">${item.margin.toLocaleString()}</span> (<span class="aqua">${item.marginPercent.toLocaleString()}%</span>)<br>
                 1h instabuys: <span class="blue">${item.instaBuy.toLocaleString()}</span><br>
-                1h instasells: <span class="blue">${item.instaSell.toLocaleString()}</span>${item.infl}<br>
-                Coins per Hour: ${item.hourlyProfit.toLocaleString()}</span>
+                1h instasells: <span class="blue">${item.instaSell.toLocaleString()}</span><br>
+                Coins per Hour: <span class="${item.clr}">${item.hourlyProfit.toLocaleString()}</span>
             </div>
         </div>
     `).join('');
-    //<span class="${item.clr}">
+    //${item.infl}
     document.getElementById('bzdata').innerHTML = `<div class="grid-container">${displayData}</div>`;
 }
 
