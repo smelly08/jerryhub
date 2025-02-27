@@ -164,7 +164,8 @@ function displayItems(items) {
                 Margin: <span class="purple">${item.margin.toLocaleString()}</span> (<span class="aqua">${item.marginPercent.toLocaleString()}%</span>)<br>
                 1h instabuys: <span class="blue">${item.instaBuy.toLocaleString()}</span><br>
                 1h instasells: <span class="blue">${item.instaSell.toLocaleString()}</span>${item.infl}<br>
-                Coins per Hour: <span class="${item.clr}">${item.hourlyProfit.toLocaleString()}</span>
+                Coins per Hour: <span class="${item.clr}">${item.hourlyProfit.toLocaleString()}</span><br>
+                <span class="yellow">Score: ${item.flipScore}</p>
             </div>
         </div>
     `).join('');
@@ -183,9 +184,15 @@ function filterItems() {
 function bzScore(a, b, c, d) {
     const term1 = 0.9875 * b - a;
     const minCD = Math.min(c, d);
-    const term2 = (a + b) / (c + d);
-    let numerator = Math.ceil(Math.log10((term1 * minCD) * (term1 / term2) / 1000));
-    return numerator;
+    const term2 = Math.log((term1 * minCD) + 1) * Math.log(term1 + 1);
+    let scoreFloor = Math.floor(term2 / 2) / 2;
+    if (scoreFloor >= 5) {
+        return 5;
+    } else if scoreFloor <= 0 {
+        return 0;
+    } else {
+        return scoreFloor;
+    }
 }
 
 async function fetchTexturesData() {
