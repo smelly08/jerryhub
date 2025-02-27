@@ -184,12 +184,11 @@ function filterItems() {
 function bzScore(a, b, c, d) {
     const term1 = 0.9875 * b - a;
     const minCD = Math.min(c, d);
-    const term2 = Math.log((term1 * minCD) + 1) * Math.log(term1 + 1);
-    let scoreFloor = Math.floor(term2 / 2) / 2;
-    if (scoreFloor <= 0) {
+    const term2 = Math.floor((Math.log10((term1 * minCD) + 1) * Math.log10(minCD + 1))  / 2) / 2;
+    if (term2 <= 0) {
         return 0;
     } else {
-        return scoreFloor;
+        return term2;
     }
 }
 
