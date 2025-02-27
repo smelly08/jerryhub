@@ -186,9 +186,7 @@ function bzScore(a, b, c, d) {
     const minCD = Math.min(c, d);
     const term2 = Math.log((term1 * minCD) + 1) * Math.log(term1 + 1);
     let scoreFloor = Math.floor(term2 / 2) / 2;
-    if (scoreFloor >= 5) {
-        return 5;
-    } else if (scoreFloor <= 0) {
+    if (scoreFloor <= 0) {
         return 0;
     } else {
         return scoreFloor;
