@@ -11,11 +11,22 @@ function initialize() {
         <input type="text" id="username" placeholder="Search for an item">
         <button id="fetch-btn">Refresh data</button>
         <div id="bzdata" class="grid-container"></div>
+        <select id="sort">
+            <option value="hourlyProfit" selected="selected">Sort by: hourly profit</option>
+            <option value="sellPrice">Sort by: buy order</option>
+            <option value="buyPrice">Sort by: sell order</option>
+            <option value="margin">Sort by: margin</option>
+            <option value="marginPercent">Sort by: margin percent</option>
+            <option value="instaBuy">Sort by: 1h instabuys</option>
+            <option value="instaSell">Sort by: 1h instasells</option>
+            <option value="flipScore">Sort by: score</option>
+        </select>
     `;
 
     document.getElementById("main").innerHTML = mainContent;
     document.getElementById("fetch-btn").addEventListener("click", fetchBazaarData);
     document.getElementById('username').addEventListener('input', filterItems);
+    document.getElementById('sort').addEventListener('change', changeSortMethod);
     appendStyles();
 }
 
@@ -109,7 +120,7 @@ function updateBazaarData(bazaarData, updated) {
         processItem(bazaarData[item], item, itemList);
     }
 
-    globalItemList = itemList.sort((a, b) => b.hourlyProfit - a.hourlyProfit);
+    globalItemList = itemList.sort((a, b) => b[sortMethod] - a[sortMethod]);
     document.getElementById('lastUpdated').innerHTML = `Last updated at ${new Date(updated).toLocaleTimeString("en-US")}`;
     displayItems(globalItemList);
     filterItems();
@@ -200,6 +211,14 @@ async function fetchTexturesData() {
         console.log('Fetched Textures Data:', textures);
     } catch (error) {
         console.error('Error fetching data:', error);
+    }
+}
+
+function changeSortMethod() {
+    sortMethod = document.getElementById('sort').target.value;
+    if (!['hourlyProfit', 'buyPrice', 'sellPrice', 'margin', 'marginPercent', 'instaBuy', 'instaSell', 'flipScore'].indexOf(sortMethod) >= 0) {
+        sortMethod = hourlyProfit;
+        alert(`error, ${sortMethod} is not a valid sort method.`);
     }
 }
 
