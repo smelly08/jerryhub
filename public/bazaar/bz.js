@@ -95,6 +95,7 @@ async function fetchBazaarData() {
         const res = await fetch('https://api.hypixel.net/skyblock/bazaar');
         const data = await res.json();
         if (data.success) {
+            cachedData = data;
             updateBazaarData(data.products, data.lastUpdated);
         } else {
             throw new Error('Failed to retrieve data.');
@@ -104,6 +105,7 @@ async function fetchBazaarData() {
         const corsRes = await fetch('https://api.codetabs.com/v1/tmp/?quest=https://api.hypixel.net/skyblock/bazaar');
         const corsData = await corsRes.json();
         if (corsData.success) {
+            cachedData = corsData;
             updateBazaarData(corsData.products, corsData.lastUpdated);
         } else {
             document.getElementById('bzdata').innerText = 'Error fetching data.';
@@ -128,8 +130,6 @@ function updateBazaarData(bazaarData, updated) {
     document.getElementById('lastUpdated').innerHTML = `Last updated at ${new Date(updated).toLocaleTimeString("en-US")}`;
     displayItems(globalItemList.sort((a, b) => b[sortMethod] - a[sortMethod]));
     filterItems();
-    
-    cachedData = bazaarData;
 }
 
 function processItem(itemData, itemName, itemList) {
