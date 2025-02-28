@@ -8,20 +8,22 @@ window.addEventListener("load", initialize);
 
 function initialize() {
     const mainContent = `
-        <h1>Bazaar Flipper</h1>
-        <p id="lastUpdated"></p>
-        <input type="text" id="username" placeholder="Search for an item">
-        <button id="fetch-btn">Refresh data</button>
-        <select id="sort">
-            <option value="hourlyProfit" selected="selected">Sort by: hourly profit</option>
-            <option value="sellPrice">Sort by: buy order</option>
-            <option value="buyPrice">Sort by: sell order</option>
-            <option value="margin">Sort by: margin</option>
-            <option value="marginPercent">Sort by: margin percent</option>
-            <option value="instaBuy">Sort by: 1h instabuys</option>
-            <option value="instaSell">Sort by: 1h instasells</option>
-            <option value="flipScore">Sort by: score</option>
-        </select>
+        <div class="sticky">
+            <h1>Bazaar Flipper</h1>
+            <p id="lastUpdated"></p>
+            <input type="text" id="username" placeholder="Search for an item">
+            <button id="fetch-btn">Refresh data</button>
+            <select id="sort">
+                <option value="hourlyProfit" selected="selected">Sort by: hourly profit</option>
+                <option value="sellPrice">Sort by: buy order</option>
+                <option value="buyPrice">Sort by: sell order</option>
+                <option value="margin">Sort by: margin</option>
+                <option value="marginPercent">Sort by: margin percent</option>
+                <option value="instaBuy">Sort by: 1h instabuys</option>
+                <option value="instaSell">Sort by: 1h instasells</option>
+                <option value="flipScore">Sort by: score</option>
+            </select>
+        </div>
         <div id="bzdata" class="grid-container"></div>
     `;
 
@@ -35,6 +37,9 @@ function initialize() {
 function appendStyles() {
     const style = document.createElement('style');
     style.innerHTML = `
+        .sticky {
+            position: sticky;
+        }
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
