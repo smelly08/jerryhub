@@ -221,6 +221,7 @@ async function fetchTexturesData() {
 }
 
 function changeSortMethod() {
+    alert(JSON.stringify(cachedData));
     sortMethod = document.getElementById('sort').value;
     if (!['hourlyProfit', 'buyPrice', 'sellPrice', 'margin', 'marginPercent', 'instaBuy', 'instaSell', 'flipScore'].indexOf(sortMethod) >= 0) {
         sortMethod = hourlyProfit;
