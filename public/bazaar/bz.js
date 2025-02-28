@@ -10,7 +10,6 @@ function initialize() {
         <p id="lastUpdated"></p>
         <input type="text" id="username" placeholder="Search for an item">
         <button id="fetch-btn">Refresh data</button>
-        <div id="bzdata" class="grid-container"></div>
         <select id="sort">
             <option value="hourlyProfit" selected="selected">Sort by: hourly profit</option>
             <option value="sellPrice">Sort by: buy order</option>
@@ -21,6 +20,7 @@ function initialize() {
             <option value="instaSell">Sort by: 1h instasells</option>
             <option value="flipScore">Sort by: score</option>
         </select>
+        <div id="bzdata" class="grid-container"></div>
     `;
 
     document.getElementById("main").innerHTML = mainContent;
