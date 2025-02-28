@@ -221,13 +221,18 @@ async function fetchTexturesData() {
 }
 
 function changeSortMethod() {
-    alert(JSON.stringify(cachedData));
-    sortMethod = document.getElementById('sort').value;
-    if (!['hourlyProfit', 'buyPrice', 'sellPrice', 'margin', 'marginPercent', 'instaBuy', 'instaSell', 'flipScore'].indexOf(sortMethod) >= 0) {
-        sortMethod = hourlyProfit;
-        alert(`error, ${sortMethod} is not a valid sort method.`);
+    const newSortMethod = document.getElementById('sort').value; // Get the selected value
+    sortMethod = newSortMethod; // Set the sortMethod to the new selected value
+
+    // Validate the sortMethod
+    if (!['hourlyProfit', 'buyPrice', 'sellPrice', 'margin', 'marginPercent', 'instaBuy', 'instaSell', 'flipScore'].includes(sortMethod)) {
+        sortMethod = "hourlyProfit"; // Use default if invalid
+        alert(`Error: ${sortMethod} is not a valid sort method.`);
     }
-    updateBazaarData(cachedData.products, cachedData.lastUpdated);
+
+    // Sort the globalItemList based on the new sortMethod and update the display
+    const sortedItems = globalItemList.sort((a, b) => b[sortMethod] - a[sortMethod]);
+    displayItems(sortedItems);
 }
 
 fetchTexturesData();
