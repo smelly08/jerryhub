@@ -6,7 +6,7 @@ window.addEventListener("load", initialize);
 
 function initialize() {
     const mainContent = `
-        <h1>Bazaar Flipper</h1>
+        <h1>Bazaar Flipper, v1.001</h1>
         <p id="lastUpdated"></p>
         <input type="text" id="username" placeholder="Search for an item">
         <button id="fetch-btn">Refresh data</button>
@@ -220,7 +220,7 @@ function changeSortMethod() {
         sortMethod = hourlyProfit;
         alert(`error, ${sortMethod} is not a valid sort method.`);
     }
-    displayItems(globalItemList.sort((a, b) => b[sortMethod] - a[sortMethod]));
+    updateBazaarData();
 }
 
 fetchTexturesData();
