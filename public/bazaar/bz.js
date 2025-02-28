@@ -112,6 +112,7 @@ function updateBazaarData(bazaarData, updated) {
     globalItemList = itemList.sort((a, b) => b.hourlyProfit - a.hourlyProfit);
     document.getElementById('lastUpdated').innerHTML = `Last updated at ${new Date(updated).toLocaleTimeString("en-US")}`;
     displayItems(globalItemList);
+    filterItems();
 }
 
 function processItem(itemData, itemName, itemList) {
