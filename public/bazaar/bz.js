@@ -223,7 +223,7 @@ function changeSortMethod() {
         sortMethod = hourlyProfit;
         alert(`error, ${sortMethod} is not a valid sort method.`);
     }
-    displayItems(globalItemList.sort((a, b) => b[sortMethod] - a[sortMethod]));
+    fetchBazaarData();
 }
 
 fetchTexturesData();
