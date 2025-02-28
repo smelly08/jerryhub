@@ -11,6 +11,7 @@ addEventListener("load", (event) => {
         #homeButton {
             position: fixed;
             cursor: pointer;
+            margin-bottom: 0;
             top: 0;
             left: 12px;
             z-index: 9999;
