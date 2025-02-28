@@ -120,9 +120,9 @@ function updateBazaarData(bazaarData, updated) {
         processItem(bazaarData[item], item, itemList);
     }
 
-    globalItemList = itemList.sort((a, b) => b[sortMethod] - a[sortMethod]);
+    globalItemList = itemList;
     document.getElementById('lastUpdated').innerHTML = `Last updated at ${new Date(updated).toLocaleTimeString("en-US")}`;
-    displayItems(globalItemList);
+    displayItems(globalItemList.sort((a, b) => b[sortMethod] - a[sortMethod]));
     filterItems();
 }
 
@@ -215,11 +215,12 @@ async function fetchTexturesData() {
 }
 
 function changeSortMethod() {
-    sortMethod = document.getElementById('sort').target.value;
+    sortMethod = document.getElementById('sort').value;
     if (!['hourlyProfit', 'buyPrice', 'sellPrice', 'margin', 'marginPercent', 'instaBuy', 'instaSell', 'flipScore'].indexOf(sortMethod) >= 0) {
         sortMethod = hourlyProfit;
         alert(`error, ${sortMethod} is not a valid sort method.`);
     }
+    displayItems(globalItemList.sort((a, b) => b[sortMethod] - a[sortMethod]));
 }
 
 fetchTexturesData();
