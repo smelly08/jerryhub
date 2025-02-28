@@ -8,7 +8,7 @@ window.addEventListener("load", initialize);
 
 function initialize() {
     const mainContent = `
-        <h1>Bazaar Flipper, v1.003</h1>
+        <h1>Bazaar Flipper, v1.004</h1>
         <p id="lastUpdated"></p>
         <input type="text" id="username" placeholder="Search for an item">
         <button id="fetch-btn">Refresh data</button>
@@ -87,8 +87,7 @@ function appendStyles() {
             display: inline-block;
         }
         .inflatedIcon {
-            position: relative;
-            margin: 4px;
+            position: absolute;
         }
     `;
     document.head.appendChild(style);
@@ -176,14 +175,15 @@ function processItem(itemData, itemName, itemList) {
 function displayItems(items) {
     const displayData = items.map(item => `
         <div class="grid-item">
-            <div class="inflatedIcon">
-                ${item.infl}
-            </div>
             <div class="inventory-slot">
                 <img src="${textures[item.name]?.texture || "https://www.mc-heads.net/head/b6e522d918252149e6ede2edf3fe0f2c2c58fee6ac11cb88c617207218ae4595"}" width="32px" height="32px" />
             </div>
             <strong>${item.name}</strong><br>
             <div class="tooltipDiv">
+            
+                <div class="inflatedIcon">
+                    ${item.infl}
+                </div>
                 <p>Buy order: <span class="gold">${item.sellPrice.toLocaleString()}</span><br>
                 Sell order: <span class="gold">${item.buyPrice.toLocaleString()}</span><br>
                 Margin: <span class="purple">${item.margin.toLocaleString()}</span> (<span class="aqua">${item.marginPercent.toLocaleString()}%</span>)<br>
