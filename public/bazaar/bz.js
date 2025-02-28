@@ -86,9 +86,6 @@ function appendStyles() {
         .grid-item p, .grid-item span {
             display: inline-block;
         }
-        .inflatedIcon {
-            position: absolute;
-        }
     `;
     document.head.appendChild(style);
 }
@@ -148,7 +145,7 @@ function processItem(itemData, itemName, itemList) {
     const hourlyProfit = Math.round(Math.min(instaBuy, instaSell) * margin * 10) / 10;
     const flipScore = bzScore(sellPrice, buyPrice, instaBuy, instaSell);
     
-    const inflated = marginPercent >= 100 ? `<br><span class="red">[!]</span><br>` : `<br>`;
+    const inflated = marginPercent >= 100 ? `<span class="red">[!]</span>` : ``;
     const color = hourlyProfit >= 0 ? "green" : "red";
 
     const itemDetails = {
@@ -178,12 +175,8 @@ function displayItems(items) {
             <div class="inventory-slot">
                 <img src="${textures[item.name]?.texture || "https://www.mc-heads.net/head/b6e522d918252149e6ede2edf3fe0f2c2c58fee6ac11cb88c617207218ae4595"}" width="32px" height="32px" />
             </div>
-            <strong>${item.name}</strong><br>
+            <strong>${item.name} ${item.infl}</strong><br>
             <div class="tooltipDiv">
-            
-                <div class="inflatedIcon">
-                    ${item.infl}
-                </div>
                 <p>Buy order: <span class="gold">${item.sellPrice.toLocaleString()}</span><br>
                 Sell order: <span class="gold">${item.buyPrice.toLocaleString()}</span><br>
                 Margin: <span class="purple">${item.margin.toLocaleString()}</span> (<span class="aqua">${item.marginPercent.toLocaleString()}%</span>)<br>
