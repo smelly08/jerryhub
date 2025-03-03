@@ -60,7 +60,7 @@ body {
         -2px 4px black;
 }
 .inventory-title {
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
     border-bottom: 2px solid #ccc;
 }
